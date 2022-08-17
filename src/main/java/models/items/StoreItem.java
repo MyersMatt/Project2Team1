@@ -4,15 +4,15 @@ public class StoreItem {
 	
 	private int itemId;
 	private String itemName;
-	private int itemPrice;
+	private double itemPrice;
 	private int itemQuantity;
 
 	public StoreItem() {
-		this(0, "itemName", 0, 0);
+		this(0, "itemName", 0.00, 0);
 		
 	}
 	
-	public StoreItem(int itemId, String itemName, int itemPrice, int itemQuantity) {
+	public StoreItem(int itemId, String itemName, double itemPrice, int itemQuantity) {
 		this.itemId = itemId;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
@@ -35,7 +35,7 @@ public class StoreItem {
 		this.itemName = itemName;
 	}
 
-	public int getitemPrice() {
+	public double getitemPrice() {
 		return this.itemPrice;
 	}
 
