@@ -7,47 +7,47 @@ public class StoreItem {
 	private int itemPrice;
 	private int itemQuantity;
 
-	public User() {
-		this("itemId", "itemName", "itemPrice", "itemQuantity");
+	public StoreItem() {
+		this(0, "itemName", 0, 0);
 		
 	}
 	
-	public User(int itemId, String itemName, int itemPrice, int itemQuantity) {
+	public StoreItem(int itemId, String itemName, int itemPrice, int itemQuantity) {
 		this.itemId = itemId;
 		this.itemName = itemName;
-		this.itemprice = itemPrice;
+		this.itemPrice = itemPrice;
 		this.itemQuantity = itemQuantity;
 	}
 	
-	public String getitemId() {
+	public int getitemId() {
 		return this.itemId;
 	}
 
-	public String setitemId(int itemId) {
-		return this.itemId = itemId;
+	public void setitemId(int itemId) {
+		this.itemId = itemId;
 	}
 
 	public String getitemName() {
 		return this.itemName;
 	}
 
-	public String setitemName(String itemName) {
-		return this.itemName = itemName;
+	public void setitemName(String itemName) {
+		this.itemName = itemName;
 	}
 
-	public String getitemPrice() {
+	public int getitemPrice() {
 		return this.itemPrice;
 	}
 
-	public String setitemPrice(int itemPrice) {
-		return this.itemPrice = itemPrice;
+	public void setitemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
 	}
 	
-	public String getitemQuantity() {
+	public int getitemQuantity() {
 		return this.itemQuantity;
 	}
 
-	public String setitemQuantity(int itemQuantity) {
-		return this.itemQuantity = itemQuantity;
+	public void setitemQuantity(int itemQuantity) {
+		this.itemQuantity = itemQuantity;
 	}
 }

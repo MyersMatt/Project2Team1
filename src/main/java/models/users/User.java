@@ -2,7 +2,6 @@ package models.users;
 
 import java.util.List;
 
-import com.models.Account;
 
 public class User extends AnonymousUser{
 	
@@ -47,7 +46,7 @@ public class User extends AnonymousUser{
 	}
 
 	public String getUsername() {
-		return this.username;
+		return this.userName;
 	}
 
 	public String setUserName(String userName) {
@@ -85,3 +84,4 @@ public class User extends AnonymousUser{
 	public String setpaymentInfo(String paymentInfo) {
 		return this.paymentInfo = paymentInfo;
 	}
+}

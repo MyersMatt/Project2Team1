@@ -15,12 +15,12 @@ public class Admin extends User{
 	
 	}
 	
-	public String getadminId() {
+	public int getadminId() {
 		return this.adminId;
 	}
 
-	public String setadminId(String adminId) {
-		return this.adminId = adminId;
+	public void setadminId(int adminId) {
+		this.adminId = adminId;
 	}
 	
 }
