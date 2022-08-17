@@ -1,4 +1,4 @@
 package services.users;
 
-public class UserService {
+public class UserService extends GuestService {
 }
