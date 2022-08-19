@@ -96,7 +96,7 @@ color: aliceblue;
     background-color: aqua;
     font-size: 16px;
     font-weight: 600;
-    border: none;
+    border: 2px solid black;
     border-radius: 5px;
 }
 [type = "submit"]:hover{
@@ -106,6 +106,6 @@ color: aliceblue;
     background-color: aquamarine;
     font-size: 16px;
     font-weight: 600;
-    border: none;
+    border: 2px antiquewhite;
     border-radius: 5px;
 }
