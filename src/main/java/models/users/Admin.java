@@ -1,7 +1,20 @@
 package models.users;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+
+@Entity
+@Table(name="admin")
 public class Admin extends User{
-	private int adminId;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="admin_id")
+	private Integer adminId;
 	
 	public Admin() {
 		super();

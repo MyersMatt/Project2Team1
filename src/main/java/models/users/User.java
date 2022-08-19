@@ -1,16 +1,44 @@
 package models.users;
 
+
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="users")
 
 public class User extends AnonymousUser{
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
+	@Column(name="user_id")
+	private Integer Id;
+	
+	@Column(name="user_name",unique=true)
 	private String userName;
+	
+	@Column(name="password")
 	private String password;
+	
+	@Column(name="email",unique=true)
 	private String email;
+	
+	@Column(name="first_name")
 	private String firstName;
+	
+	@Column(name="last_name")
 	private String lastName;
+	
+	@Column(name="shipping_address")
 	private String shippingAddress;
+	
+	@Column(name="payment_info")
 	private String paymentInfo;
 	
 	public User() {
