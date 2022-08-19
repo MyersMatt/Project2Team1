@@ -1,0 +1,64 @@
+nav{
+    float: right;
+}
+table a {
+    text-decoration: none;
+    color: black;
+}
+th {
+    text-decoration: none;
+    color: black;
+}
+
+nav:hover{
+    color: black;
+}
+h1{
+    color: black;
+}
+
+section{
+    width:100%;
+    height: 100%;
+    background-color:cornsilk;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+form{
+    padding: 10px;
+    border: solid aqua;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px ;
+    height: fit-content;
+}
+[type = "submit"]{
+    padding-top: 10px;
+    height: 50px;
+    width: 90%;
+    padding: 5px;
+    background-color: aqua;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+[type = "submit"]:hover{
+    height: 50px;
+    width: 90%;
+    padding: 5px;
+    background-color: aquamarine;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px antiquewhite;
+    border-radius: 5px;
+}

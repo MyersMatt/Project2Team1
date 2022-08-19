@@ -1,0 +1,18 @@
+nav{
+    float: right;
+}
+table a {
+    text-decoration: none;
+    color: black;
+}
+th {
+    text-decoration: none;
+    color: black;
+}
+
+nav:hover{
+    color: black;
+}
+h1{
+    color: black;
+}
