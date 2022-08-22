@@ -1,7 +1,7 @@
 package models.users;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 @Entity
 @Table(name="users")
 

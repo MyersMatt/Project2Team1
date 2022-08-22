@@ -1,6 +1,6 @@
 package models.items;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="store_item")
