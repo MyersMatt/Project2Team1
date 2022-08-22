@@ -1,4 +1,22 @@
-nav{
+header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+menu {
+    display: flex;
+    justify-content: right;
+}
+
+main section div article {
+    display: flex;
+    flex-basis: 0;
+    left-margin: 5%;
+    justify-content: space-around;
+}
+
+nav {
     float: right;
 }
 table a {
