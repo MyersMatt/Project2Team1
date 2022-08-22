@@ -29,5 +29,6 @@ public class HibernateUtil {
     public void closeSession(){
         if(session == null) return;
         session.close();
+        session = null;
     }
 }
