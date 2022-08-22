@@ -5,7 +5,7 @@
     <session-factory>
 
         <property name = "hibernate.dialect">
-            org.hibernate.dialect.MySQLDialect
+            org.hibernate.dialect.PostgreSQL95Dialect
         </property>
 
         <property name = "hibernate.connection.driver_class">
@@ -15,19 +15,19 @@
         <!-- Assume test is the database name -->
 
         <property name = "hibernate.connection.url">
-            jdbc:mysql://localhost/test
+            jdbc:postgresql://<server_loc>:<port>/<db_name>
         </property>
 
         <property name = "hibernate.connection.username">
-            root
+            db_user
         </property>
 
         <property name = "hibernate.connection.password">
-            root123
+            db_user_password
         </property>
 
         <!-- List of XML mapping files -->
-        <mapping resource = "Employee.hbm.xml"/>
+        <mapping resource = "Example.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
