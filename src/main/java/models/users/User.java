@@ -4,16 +4,14 @@ package models.users;
 import javax.persistence.*;
 @Entity
 @Table(name="users")
-
 public class User extends AnonymousUser{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	@Column(name="user_id")
 	private Integer id;
 	
 	@Column(name="username",unique=true)
-	private String userName;
+	private String username;
 	
 	@Column(name="password")
 	private String password;
@@ -38,22 +36,22 @@ public class User extends AnonymousUser{
 		
 	}
 	
-	public User(String firstName, String lastName, String email, String userName, String password, String shippingAddress, String paymentInfo) {
+	public User(String firstName, String lastName, String email, String username, String password, String shippingAddress, String paymentInfo) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 		this.shippingAddress = shippingAddress;
 		this.paymentInfo = paymentInfo;
 	
 	}
 
-	public User(Integer id,String firstName, String lastName, String email, String userName, String password, String shippingAddress, String paymentInfo) {
+	public User(Integer id, String firstName, String lastName, String email, String username, String password, String shippingAddress, String paymentInfo) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 		this.shippingAddress = shippingAddress;
 		this.paymentInfo = paymentInfo;
@@ -68,12 +66,12 @@ public class User extends AnonymousUser{
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
 
 	public String getPassword() {
@@ -127,12 +125,12 @@ public class User extends AnonymousUser{
 	@Override
 	public String toString(){
 		return "User ID: " + id
-				+"\nusername: "			+ userName
+				+"\nusername: "			+ username
 				+"\nEmail: "			+ email
 				+"\npassword: "			+ password
 				+"\nFirst Name: "		+ firstName
 				+"\nLast Name: "		+ lastName
 				+"\nShipping Address: "	+ shippingAddress
-				+"\nPayment Info" 		+ paymentInfo;
+				+"\nPayment Info: " 		+ paymentInfo;
 	}
 }
