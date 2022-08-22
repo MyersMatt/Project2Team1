@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class RegistrationService {
     private static final Logger logger = Logger.getLogger(RegistrationService.class.getName());
-    private UserDao userDao;
+    private final UserDao userDao;
     public RegistrationService() {this.userDao = new UserDao();}
     public Optional<User> register(String firstName,
                                    String lastName,

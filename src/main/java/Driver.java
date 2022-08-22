@@ -7,7 +7,7 @@ import utils.HibernateUtil;
 import java.util.Optional;
 
 public class Driver {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         UserDao userDao = new UserDao();
         Session session = HibernateUtil.getInstance().openSession();
         RegistrationService registrationService = new RegistrationService();

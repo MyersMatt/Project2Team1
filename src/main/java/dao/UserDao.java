@@ -3,19 +3,12 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import models.users.User;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateUtil;
-
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 
 public class UserDao implements Dao<User> {
 	private static final Logger logger = Logger.getLogger(UserDao.class.getName());
@@ -30,12 +23,11 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public Optional<User> read(String arg) throws SQLException {
-		Optional<User> user = Optional.empty();
 		Session session = HibernateUtil.getInstance().openSession();
 		User u = session.createQuery("from User where username=:username" , User.class)
 						.setParameter("username",arg)
 						.uniqueResult();
-		user = Optional.of(u);
+		Optional<User> user = Optional.of(u);
 		HibernateUtil.getInstance().closeSession();
 		return user;
 
