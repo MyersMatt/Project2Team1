@@ -35,14 +35,20 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public void update(User t) throws SQLException {
-		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getInstance().openSession();
+		Transaction transaction = session.beginTransaction();
+		session.update(t);
+		transaction.commit();
+		HibernateUtil.getInstance().closeSession();
 		
 	}
 
 	@Override
 	public void delete(User t) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		Session session = HibernateUtil.getInstance().openSession();
+		Transaction transaction = session.beginTransaction();
+		session.delete(t);
+		transaction.commit();
 	}
 
 	@Override
