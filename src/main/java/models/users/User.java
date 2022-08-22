@@ -10,9 +10,9 @@ public class User extends AnonymousUser{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
 	@Column(name="user_id")
-	private Integer Id;
+	private Integer id;
 	
-	@Column(name="user_name",unique=true)
+	@Column(name="username",unique=true)
 	private String userName;
 	
 	@Column(name="password")
@@ -48,60 +48,91 @@ public class User extends AnonymousUser{
 		this.paymentInfo = paymentInfo;
 	
 	}
-	
-	public String getFirstName() {
-		return this.firstName;
+
+	public User(Integer id,String firstName, String lastName, String email, String userName, String password, String shippingAddress, String paymentInfo) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.userName = userName;
+		this.password = password;
+		this.shippingAddress = shippingAddress;
+		this.paymentInfo = paymentInfo;
+		this.id = id;
 	}
 
-	public String setFirstName(String firstName) {
-		return this.firstName = firstName;
+	public Integer getId() {
+		return id;
 	}
 
-	public String getLastName() {
-		return this.lastName;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public String setLastName(String lastName) {
-		return this.lastName = lastName;
+	public String getUserName() {
+		return userName;
 	}
 
-	public String getUsername() {
-		return this.userName;
-	}
-
-	public String setUserName(String userName) {
-		return this.userName = userName;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public String setEmail(String email) {
-		return this.email = email;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
 
-	public String setPassword(String password) {
-		return this.password = password;
-	}
-	
-	public String getshippingAddress() {
-		return this.shippingAddress;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String setshippingAddress(String shippingAddress) {
-		return this.shippingAddress = shippingAddress;
-	}
-	
-	public String getpaymentInfo() {
-		return this.paymentInfo;
+	public String getEmail() {
+		return email;
 	}
 
-	public String setpaymentInfo(String paymentInfo) {
-		return this.paymentInfo = paymentInfo;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(String shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
+	public String getPaymentInfo() {
+		return paymentInfo;
+	}
+
+	public void setPaymentInfo(String paymentInfo) {
+		this.paymentInfo = paymentInfo;
+	}
+
+	@Override
+	public String toString(){
+		return "User ID: " + id
+				+"\nusername: "			+ userName
+				+"\nEmail: "			+ email
+				+"\npassword: "			+ password
+				+"\nFirst Name: "		+ firstName
+				+"\nLast Name: "		+ lastName
+				+"\nShipping Address: "	+ shippingAddress
+				+"\nPayment Info" 		+ paymentInfo;
 	}
 }
