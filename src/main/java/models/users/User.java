@@ -1,15 +1,20 @@
 package models.users;
 
 
+import org.hibernate.annotations.GenerationTime;
+import org.hibernate.annotations.NaturalId;
+
+import javax.annotation.Generated;
 import javax.persistence.*;
 @Entity
 @Table(name="users")
 public class User extends AnonymousUser{
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="user_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="user_id", insertable = false, updatable = false)
 	private Integer id;
-	
+
+	@NaturalId
 	@Column(name="username",unique=true)
 	private String username;
 	

@@ -13,7 +13,6 @@
         <id name = "id" column = "user_id" type = "java.lang.Integer">
             <generator class="native"/>
         </id>
-
         <property name = "username"         column = "username"         type = "java.lang.String"/>
         <property name = "password"         column = "password"         type = "java.lang.String"/>
         <property name = "firstName"        column = "first_name"       type = "java.lang.String"/>
