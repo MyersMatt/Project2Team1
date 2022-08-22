@@ -12,7 +12,7 @@ public class StoreItem {
 	private int itemId;
 	@Column(name = "item_name")
 	private String itemName;
-	@Column(name="item_prioce")
+	@Column(name="item_price")
 	private double itemPrice;
 	@Column(name="item_quantity")
 	private int itemQuantity;

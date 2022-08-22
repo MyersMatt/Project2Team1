@@ -4,7 +4,6 @@ package models.users;
 import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.NaturalId;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 @Entity
 @Table(name="users")
