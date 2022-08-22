@@ -26,6 +26,8 @@
             db_user_password
         </property>
 
+        <property name="hbm2ddl.auto">create</property>
+
         <!-- List of XML mapping files -->
         <mapping resource = "Example.hbm.xml"/>
 
