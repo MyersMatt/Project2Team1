@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/authentication")
 @CrossOrigin(origins = "*")
 public class AuthenticationController {
+    @Autowired
     private AuthenticationService authenticationService;
+    @Autowired
     private RegistrationService registrationService;
+
 
     @Autowired
     public AuthenticationController(AuthenticationService authenticationService, RegistrationService registrationService){

@@ -15,6 +15,7 @@ public class RegistrationService {
     private static final Logger logger = Logger.getLogger(RegistrationService.class.getName());
     @Autowired
     private final UserDao userDao;
+    @Autowired
     public RegistrationService(UserDao userDao) {this.userDao = userDao;}
     public Optional<User> register(String firstName,
                                    String lastName,

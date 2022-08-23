@@ -19,6 +19,7 @@ import javax.transaction.Transactional;
 @Repository("UserDaoBean")
 public class UserDao implements Dao<User> {
 	private static final Logger logger = Logger.getLogger(UserDao.class.getName());
+	@Autowired
 	private SessionFactory sessionFactory;
 	@Autowired
 	public UserDao(SessionFactory sessionFactory){
