@@ -13,10 +13,5 @@
     <database id="8" parent="1" name="ecommerce">
       <Current>1</Current>
     </database>
-    <schema id="9" parent="8" name="information_schema"/>
-    <schema id="10" parent="8" name="pg_catalog"/>
-    <schema id="11" parent="8" name="public">
-      <Current>1</Current>
-    </schema>
   </database-model>
 </dataSource>

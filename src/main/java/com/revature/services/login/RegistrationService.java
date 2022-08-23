@@ -2,16 +2,20 @@ package com.revature.services.login;
 
 import com.revature.dao.UserDao;
 import com.revature.models.users.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Service("RegistrationServiceBean")
 public class RegistrationService {
     private static final Logger logger = Logger.getLogger(RegistrationService.class.getName());
+    @Autowired
     private final UserDao userDao;
-    public RegistrationService() {this.userDao = new UserDao();}
+    public RegistrationService(UserDao userDao) {this.userDao = userDao;}
     public Optional<User> register(String firstName,
                                    String lastName,
                                    String email,

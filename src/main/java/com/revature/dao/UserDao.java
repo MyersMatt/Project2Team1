@@ -7,11 +7,23 @@ import java.util.logging.Logger;
 
 import com.revature.models.users.User;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import com.revature.utils.HibernateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+
+@Transactional
+@Repository("UserDaoBean")
 public class UserDao implements Dao<User> {
 	private static final Logger logger = Logger.getLogger(UserDao.class.getName());
+	private SessionFactory sessionFactory;
+	@Autowired
+	public UserDao(SessionFactory sessionFactory){
+		this.sessionFactory = sessionFactory;
+	}
 	@Override
 	public void create(User t) throws SQLException {
 		Session session = HibernateUtil.getInstance().openSession();
