@@ -4,18 +4,18 @@
     <root id="1">
       <ServerVersion>14.5</ServerVersion>
     </root>
-    <database id="2" parent="1" name="chinook"/>
-    <database id="3" parent="1" name="ecommerce">
+    <database id="2" parent="1" name="template1"/>
+    <database id="3" parent="1" name="template0"/>
+    <database id="4" parent="1" name="ersproject"/>
+    <database id="5" parent="1" name="test_ersproject"/>
+    <database id="6" parent="1" name="postgres"/>
+    <database id="7" parent="1" name="chinook"/>
+    <database id="8" parent="1" name="ecommerce">
       <Current>1</Current>
     </database>
-    <database id="4" parent="1" name="ersproject"/>
-    <database id="5" parent="1" name="postgres"/>
-    <database id="6" parent="1" name="template0"/>
-    <database id="7" parent="1" name="template1"/>
-    <database id="8" parent="1" name="test_ersproject"/>
-    <schema id="9" parent="3" name="information_schema"/>
-    <schema id="10" parent="3" name="pg_catalog"/>
-    <schema id="11" parent="3" name="public">
+    <schema id="9" parent="8" name="information_schema"/>
+    <schema id="10" parent="8" name="pg_catalog"/>
+    <schema id="11" parent="8" name="public">
       <Current>1</Current>
     </schema>
   </database-model>

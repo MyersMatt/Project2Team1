@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="models.items">
+<hibernate-mapping package="com.revature.models.items">
     <class name = "StoreItem" table = "store_item">
 
         <meta attribute = "class-description">
