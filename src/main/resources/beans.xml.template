@@ -26,4 +26,8 @@
     <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <!-- Bean Definitions -->
+    <bean id = "user"       class = "com.revature.models.users.User"/>
+    <bean id = "store_item" class = "com.revature.models.items.StoreItem"/>
+    <bean id = "admin"      class = "com.revature.models.users.Admin"/>
 </beans>
