@@ -20,9 +20,8 @@
 body{
     margin: 20px;
     background-repeat:no-repeat;
-   background-size:cover;
+    background-size:cover;
     background: white;
-    /* background: url("../images/distillation.png") no-repeat center center fixed; */
     --color-primary: #005995;
     --color-primary-dark: #08007f;
     --color-secondary: #252c6a;
@@ -72,12 +71,12 @@ article p, article h3{
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius);
-    /* background: #ffffff; */
+    background: #ffffff;
 }
 
 .container,
-.forminput,
-.formbutton {
+.form__input,
+.form__button {
     font: 500 1rem 'Quicksand', sans-serif;
 }
 
@@ -85,38 +84,37 @@ article p, article h3{
     display: none;
 }
 
-.form > :first-child {
+.form > *:first-child {
     margin-top: 0;
 }
 
-.form >:last-child {
+.form > *:last-child {
     margin-bottom: 0;
 }
 
-.formtitle {
+.form__title {
     margin-bottom: 2rem;
     text-align: center;
-    color: #005995;
 }
 
-.formmessage {
+.form__message {
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.formmessage--success {
+.form__message--success {
     color: var(--color-success);
 }
 
-.formmessage--error {
+.form__message--error {
     color: var(--color-error);
 }
 
-.forminput-group {
+.form__input-group {
     margin-bottom: 1rem;
 }
 
-.forminput {
+.form__input {
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -128,23 +126,23 @@ article p, article h3{
     transition: background 0.2s, border-color 0.2s;
 }
 
-.forminput:focus {
+.form__input:focus {
     border-color: var(--color-primary);
     background: #ffffff;
 }
 
-.forminput--error {
+.form__input--error {
     color: var(--color-error);
     border-color: var(--color-error);
 }
 
-.forminput-error-message {
+.form__input-error-message {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     color: var(--color-error);
 }
 
-.formbutton {
+.form__button {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -157,19 +155,19 @@ article p, article h3{
     background: var(--color-primary);
 }
 
-.formbutton:hover {
+.form__button:hover {
     background: var(--color-primary-dark);
 }
 
-.formbutton:active {
+.form__button:active {
     transform: scale(0.98);
 }
 
-.formtext {
+.form__text {
     text-align: center;
 }
 
-.formlink {
+.form__link {
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
@@ -178,80 +176,3 @@ article p, article h3{
 .form__link:hover {
     text-decoration: underline;
 }
-
-/*
-menu {
-    display: flex;
-    justify-content: right;
-}
-
-main section div article {
-    display: flex;
-    flex-basis: 0;
-    left-margin: 5%;
-    justify-content: space-around;
-}
-
-
-table a {
-    text-decoration: none;
-    color: black;
-}
-th {
-    text-decoration: none;
-    color: black;
-}
-
-nav:hover{
-    color: black;
-}
-h1{
-    color: black;
-}
-
-section{
-    width:100%;
-    height: 100%;
-    background-color:cornsilk;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-form{
-    padding: 10px;
-    border: solid aqua;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 300px ;
-    height: fit-content;
-}
-[type = "submit"]{
-    padding-top: 10px;
-    height: 50px;
-    width: 90%;
-    padding: 5px;
-    background-color: aqua;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px solid black;
-    border-radius: 5px;
-}
-[type = "submit"]:hover{
-    height: 50px;
-    width: 90%;
-    padding: 5px;
-    background-color: aquamarine;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px antiquewhite;
-    border-radius: 5px;
-}
-*/
