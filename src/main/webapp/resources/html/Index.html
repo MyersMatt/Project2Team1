@@ -22,28 +22,59 @@
     <main class = "grid-container">
         <article class="featured">
             <img src="../images/distillation.png" alt="featured img"> 
-            <div>
                 <div class="container">
                     <form class="form" id="login">
-                        <h1 class="formtitle">Login</h1>
-                        <div class="formmessage formmessage--error"></div>
-                        <div class="forminput-group">
-                            <input type="text" class="forminput" autofocus placeholder="username">
-                            <div class="forminput-error-message"></div>
+                        <h1 class="form__title">Login</h1>
+                        <div class="form__message form__message--error"></div>
+                        <div class="form__input-group">
+                            <input type="text" class="form__input" autofocus placeholder="Username">
+                            <div class="form__input-error-message"></div>
                         </div>
-                        <div class="forminput-group">
-                            <input type="password" class="forminput" autofocus placeholder="password">
-                            <div class="forminput-error-message">
+                        <div class="form__input-group">
+                            <input type="password" class="form__input" autofocus placeholder="Password">
+                            <div class="form__input-error-message"></div>
                         </div>
-                    <button class="formbutton" type="submit">Continue</button>
-                    <p class="formtext">
-                        <a href="#" class="formlink">Forgot your password?</a>
-                    </p>
-                    <p class="formtext">
-                        <a class="formlink" href="./" id="linkCreateAccount" >Don't have an account?  Create one.</a>
-                    </p>
+                        <button class="form__button" type="submit">Continue</button>
+                        <p class="form__text">
+                            <a href="#" class="form__link">Forgot your password?</a>
+                        </p>
+                        <p class="form__text">
+                            <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+                        </p>
                     </form>
-            </div>
+                    <form class="form form--hidden" id="createAccount">
+                        <h1 class="form__title">Create Account</h1>
+                        <div class="form__message form__message--error"></div>
+                        <div class="form__input-group">
+                            <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
+                            <div class="form__input-error-message"></div>
+                        </div>  
+                        <div class="form__input-group">
+                            <input type="text" id="signupFirstname" class="form__input" autofocus placeholder="First name">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <div class="form__input-group">
+                            <input type="text" id="signupLastname" class="form__input" autofocus placeholder="Last name">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <div class="form__input-group">
+                            <input type="text" class="form__input" autofocus placeholder="Email Address">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <div class="form__input-group">
+                            <input type="password" class="form__input" autofocus placeholder="Password">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <div class="form__input-group">
+                            <input type="password" class="form__input" autofocus placeholder="Confirm password">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <button class="form__button" type="submit">Continue</button>
+                        <p class="form__text">
+                            <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+                        </p>
+                    </form>
+                </div>
         </article>
         <article>
             <img src="../images/test-tubes.jpg" alt="featured img">
@@ -71,14 +102,30 @@
     </main>
 
 
-
+    <script src="../js/login.js"></script>
 
 
 </body>
 
 
 <footer>
-    
+    <h6>About us</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit excepturi numquam harum quibusdam molestias asperiores!</p>
+    <h6>Follow us</h6>
+    <ul>
+        <li>
+            <p>SnapStick</p>
+        </li>
+        <li>
+            <p>FaceBrick</p>
+        </li>
+        <li>
+            <p>Twister</p>
+        </li>
+        <li>
+            <p>Instaphone</p>
+        </li>
+    </ul>
 
 </footer>
 </html>
