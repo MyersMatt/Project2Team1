@@ -4,12 +4,15 @@ import com.revature.dao.UserDao;
 import com.revature.models.users.User;
 import com.revature.services.login.RegistrationService;
 import com.revature.utils.HibernateUtil;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Optional;
 
 public class Driver {
     public static void main(String[] args) {
-        RegistrationService registrationService = new RegistrationService();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        RegistrationService registrationService = applicationContext.getBean("RegistrationServiceBean", RegistrationService.class);
         Optional<User> user = registrationService.register(
                 "Steve",
                 "Rogers",

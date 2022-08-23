@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/authentication")
 @CrossOrigin(origins = "*")
-public class AuthenticationContoller {
+public class AuthenticationController {
     private AuthenticationService authenticationService;
     private RegistrationService registrationService;
 
     @Autowired
-    public AuthenticationContoller(AuthenticationService authenticationService, RegistrationService registrationService){
+    public AuthenticationController(AuthenticationService authenticationService, RegistrationService registrationService){
         this.authenticationService = authenticationService;
         this.registrationService = registrationService;
     }
