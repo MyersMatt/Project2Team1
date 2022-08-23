@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background-image: url(../images/white-diag-background.jpeg); */
+}
+
+.logo+navbar {
+    background: #eee;
+    margin: 0 auto;
+    display: grid;
+
+    /* background: whitesmoke;
+    overflow: hidden;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+}
+
+.logo+navbar:nth-child(1) {
+    grid-column: 1 / 3;
+}
+
+.nav-options {
+    display: grid;
+
+}
+
+
+.nav-options > li {
+    text-decoration: none;
+    color: #fff;
+}
+
+.grid-container {
+    background: #eee;
+    margin: 0 auto;
+    display: grid;
+}
+
+.grid-container > div {
+    background: #ccc;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #777;
+}
+
+  /* <!--
+  .one {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .two {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+  }
+  .three {
+    grid-column: 1;
+    grid-row: 2 / 5;
+  }
+  .four {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  .five {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .six {
+    grid-column: 3;
+    grid-row: 4;
+  }
+  --> */
