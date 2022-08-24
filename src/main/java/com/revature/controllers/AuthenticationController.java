@@ -4,10 +4,14 @@ import com.revature.models.users.User;
 import com.revature.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedHashMap;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/authentication")
+@CrossOrigin(origins = "*")
 public class AuthenticationController {
 
     private AuthenticationService authenticationService;
@@ -17,19 +21,17 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    public Optional<User> register(String firstName,
-                                   String lastName,
-                                   String email,
-                                   String userName,
-                                   String password,
-                                   String shippingAddress,
-                                   String paymentInfo) {
-        return authenticationService.register(firstName, lastName, email, userName, password, shippingAddress, paymentInfo);
+    @PostMapping ("/register")
+    public @ResponseBody User register(@RequestBody User u) {
+        Optional<User> user  = authenticationService.register(u);
+        return user.orElse(null);
     }
 
-    public Optional<User> login(String username, String password){
-        authenticationService.login(username,password);
-        return Optional.empty();
+    @PostMapping("/login")
+    public @ResponseBody User login(@RequestBody
+                                    LinkedHashMap<String,String> body){
+        Optional<User> user = authenticationService.login(body.get("username"),body.get("password"));
+        return user.orElse(null);
     }
 
     @Autowired

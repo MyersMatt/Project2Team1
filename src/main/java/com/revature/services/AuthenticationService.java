@@ -22,22 +22,25 @@ public class AuthenticationService {
         this.userDao = userDao;
     }
 
-    public void login(String username, String password) {
+    public Optional<User> login(String username, String password) {
+        try {
+            List<User> users = userDao.read();
+            for(User u : users){
+                if(u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
+            }
+        }catch (SQLException e){
+            logger.log(Level.SEVERE, "Error fetching user information");
+            e.printStackTrace();
+        }
+        return Optional.empty();
     }
 
-    public Optional<User> register(String firstName,
-                                   String lastName,
-                                   String email,
-                                   String userName,
-                                   String password,
-                                   String shippingAddress,
-                                   String paymentInfo) {
+    public Optional<User> register(User u) {
         try {
-            User user = new User(firstName, lastName, email, userName, password, shippingAddress, paymentInfo);
-            userDao.create(user);
+            userDao.create(u);
             List<User> users = userDao.read();
-            for(User u : users)
-                if(u.getUsername().equals(userName)) return Optional.of(u);
+            for(User i : users)
+                if(i.getUsername().equals(u.getUsername())) return Optional.of(i);
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error creating new user");
             e.printStackTrace();
@@ -52,4 +55,5 @@ public class AuthenticationService {
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
+
 }
