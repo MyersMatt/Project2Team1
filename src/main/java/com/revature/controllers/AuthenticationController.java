@@ -33,11 +33,6 @@ public class AuthenticationController {
     }
 
     @Autowired
-    public AuthenticationService getAuthenticationService() {
-        return authenticationService;
-    }
-
-    @Autowired
     public void setAuthenticationService(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
