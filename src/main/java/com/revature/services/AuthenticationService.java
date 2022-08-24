@@ -23,28 +23,18 @@ public class AuthenticationService {
     }
 
     public Optional<User> login(String username, String password) {
-        try {
-            List<User> users = userDao.read();
-            for(User u : users){
-                if(u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
-            }
-        }catch (SQLException e){
-            logger.log(Level.SEVERE, "Error fetching user information");
-            e.printStackTrace();
+        List<User> users = userDao.read();
+        for(User u : users){
+            if(u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
         }
         return Optional.empty();
     }
 
     public Optional<User> register(User u) {
-        try {
-            userDao.create(u);
-            List<User> users = userDao.read();
-            for(User i : users)
-                if(i.getUsername().equals(u.getUsername())) return Optional.of(i);
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Error creating new user");
-            e.printStackTrace();
-        }
+        userDao.create(u);
+        List<User> users = userDao.read();
+        for(User i : users)
+            if(i.getUsername().equals(u.getUsername())) return Optional.of(i);
         return Optional.empty();
     }
 
