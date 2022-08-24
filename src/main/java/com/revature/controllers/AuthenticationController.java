@@ -12,6 +12,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/authentication")
 @CrossOrigin(origins = "*")
+
 public class AuthenticationController {
 
     private AuthenticationService authenticationService;
@@ -39,3 +40,4 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 }
+ 
