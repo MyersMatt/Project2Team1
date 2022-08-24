@@ -3,8 +3,8 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="com.revature.models.users">
-    <class name = "User" table = "users">
+<hibernate-mapping package="com.revature.models">
+    <class name = "com.revature.models.users.User" table = "users">
 
         <meta attribute = "class-description">
             This class contains the registered user details.

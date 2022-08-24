@@ -2,14 +2,11 @@ package com.revature.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Optional;
+import java.util.List;
 import java.util.logging.Logger;
 
 import com.revature.models.users.User;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import com.revature.utils.HibernateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,49 +16,32 @@ import javax.transaction.Transactional;
 @Repository("UserDaoBean")
 public class UserDao implements Dao<User> {
 	private static final Logger logger = Logger.getLogger(UserDao.class.getName());
+
 	@Autowired
-	private SessionFactory sessionFactory;
-	@Autowired
+	private final SessionFactory sessionFactory;
+
 	public UserDao(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
 	}
 	@Override
-	public void create(User t) throws SQLException {
-		Session session = HibernateUtil.getInstance().openSession();
-		Transaction transaction = session.beginTransaction();
-		session.persist(t);
-		transaction.commit();
-		HibernateUtil.getInstance().closeSession();
+	public void create(User user) throws SQLException {
+		sessionFactory.getCurrentSession().save(user);
 	}
 
 	@Override
-	public Optional<User> read(String arg) throws SQLException {
-		Session session = HibernateUtil.getInstance().openSession();
-		User u = session.createQuery("from User where username=:username" , User.class)
-						.setParameter("username",arg)
-						.uniqueResult();
-		Optional<User> user = Optional.of(u);
-		HibernateUtil.getInstance().closeSession();
-		return user;
-
+	public List<User> read() throws SQLException {
+		return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();
 	}
 
 	@Override
-	public void update(User t) throws SQLException {
-		Session session = HibernateUtil.getInstance().openSession();
-		Transaction transaction = session.beginTransaction();
-		session.update(t);
-		transaction.commit();
-		HibernateUtil.getInstance().closeSession();
+	public void update(User user) throws SQLException {
+		sessionFactory.getCurrentSession().update(user);
 		
 	}
 
 	@Override
-	public void delete(User t) throws SQLException {
-		Session session = HibernateUtil.getInstance().openSession();
-		Transaction transaction = session.beginTransaction();
-		session.delete(t);
-		transaction.commit();
+	public void delete(User user) throws SQLException {
+		sessionFactory.getCurrentSession().delete(user);
 	}
 
 	@Override

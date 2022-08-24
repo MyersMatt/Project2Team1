@@ -13,20 +13,21 @@
     <context:component-scan base-package="com.revature"/>
     <tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
     <mvc:annotation-driven/>
+
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name = "driverClassName"  value="org.postgresql.Driver"/>
-        <property name = "url"              value="url"/>
-        <property name = "username"         value="username"/>
-        <property name = "password"         value="password"/>
+        <property name = "url"              value="<url>"/>
+        <property name = "username"         value="<user>"/>
+        <property name = "password"         value="<password>"/>
     </bean>
 
     <bean id = "sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.revature"/>
+        <property name="packagesToScan" value="com.revature.models"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
-                <prop key="hibernate.sql_show">false</prop>
+                <prop key="hibernate.show_sql">false</prop>
                 <prop key="hibernate.format_sql">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
@@ -36,8 +37,5 @@
     <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-    <!-- Bean Definitions -->
-    <bean id = "user"       class = "com.revature.models.users.User"/>
-    <bean id = "store_item" class = "com.revature.models.items.StoreItem"/>
-    <bean id = "admin"      class = "com.revature.models.users.Admin"/>
+
 </beans>

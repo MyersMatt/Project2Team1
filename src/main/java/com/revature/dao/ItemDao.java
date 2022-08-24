@@ -2,7 +2,8 @@ package com.revature.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,14 +24,9 @@ public class ItemDao implements Dao<StoreItem>{
 	}
 
 	@Override
-	public Optional<StoreItem> read(String arg) throws SQLException {
-		Session session = HibernateUtil.getInstance().openSession();
-		StoreItem u = session.createQuery("from StoreItem where id=:id" , StoreItem.class)
-						.setParameter("id",Integer.parseInt(arg))
-						.uniqueResult();
-		Optional<StoreItem> item = Optional.of(u);
-		HibernateUtil.getInstance().closeSession();
-		return item;
+	public List<StoreItem> read() throws SQLException {
+
+		return new ArrayList<>();
 	}
 
 	@Override

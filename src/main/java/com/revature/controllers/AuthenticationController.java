@@ -1,26 +1,44 @@
 package com.revature.controllers;
 
-import com.revature.services.login.AuthenticationService;
-import com.revature.services.login.RegistrationService;
+import com.revature.models.users.User;
+import com.revature.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Optional;
 
 @Controller
-@RequestMapping("/authentication")
-@CrossOrigin(origins = "*")
 public class AuthenticationController {
-    @Autowired
+
     private AuthenticationService authenticationService;
-    @Autowired
-    private RegistrationService registrationService;
-
 
     @Autowired
-    public AuthenticationController(AuthenticationService authenticationService, RegistrationService registrationService){
+    public AuthenticationController(AuthenticationService authenticationService){
         this.authenticationService = authenticationService;
-        this.registrationService = registrationService;
     }
 
+    public Optional<User> register(String firstName,
+                                   String lastName,
+                                   String email,
+                                   String userName,
+                                   String password,
+                                   String shippingAddress,
+                                   String paymentInfo) {
+        return authenticationService.register(firstName, lastName, email, userName, password, shippingAddress, paymentInfo);
+    }
+
+    public Optional<User> login(String username, String password){
+        authenticationService.login(username,password);
+        return Optional.empty();
+    }
+
+    @Autowired
+    public AuthenticationService getAuthenticationService() {
+        return authenticationService;
+    }
+
+    @Autowired
+    public void setAuthenticationService(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
 }

@@ -1,18 +1,14 @@
 package com.revature.models.users;
 
-
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
 @Entity
 @Table(name="users")
 public class User extends AnonymousUser{
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="user_id", insertable = false, updatable = false)
 	private Integer id;
 
-	@NaturalId
 	@Column(name="username",unique=true)
 	private String username;
 	

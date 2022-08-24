@@ -1,13 +1,12 @@
 package com.revature.models.users;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="admin")
+//
+//@Entity
+//@Table(name="admin")
 public class Admin extends User{
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="admin_id")
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@Column(name="admin_id")
 	private Integer adminId;
 	
 	public Admin() {

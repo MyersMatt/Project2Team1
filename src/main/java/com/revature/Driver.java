@@ -1,9 +1,7 @@
 package com.revature;
 
-import com.revature.dao.UserDao;
+import com.revature.controllers.AuthenticationController;
 import com.revature.models.users.User;
-import com.revature.services.login.RegistrationService;
-import com.revature.utils.HibernateUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,8 +10,8 @@ import java.util.Optional;
 public class Driver {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        RegistrationService registrationService = applicationContext.getBean("RegistrationServiceBean", RegistrationService.class);
-        Optional<User> user = registrationService.register(
+        AuthenticationController authenticationController = applicationContext.getBean("authenticationController", AuthenticationController.class);
+        Optional<User> user = authenticationController.register(
                 "Steve",
                 "Rogers",
                 "srogers@example.com",
@@ -24,7 +22,7 @@ public class Driver {
         );
         user.ifPresent(System.out::println);
 
-        user = registrationService.register(
+        user = authenticationController.register(
                 "Bruce",
                 "Banner",
                 "bbanner@example.com",
@@ -35,7 +33,7 @@ public class Driver {
         );
         user.ifPresent(System.out::println);
 
-        user = registrationService.register(
+        user = authenticationController.register(
                 "Tony",
                 "Stark",
                 "tstark@example.com",
