@@ -5,13 +5,12 @@ import com.revature.models.users.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Optional;
-
 public class Driver {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("WEB-INF/beans.xml");
         AuthenticationController authenticationController = applicationContext.getBean("authenticationController", AuthenticationController.class);
-        Optional<User> user = authenticationController.register(
+
+        User u = new User(
                 "Steve",
                 "Rogers",
                 "srogers@example.com",
@@ -20,9 +19,10 @@ public class Driver {
                 "123 Example St.",
                 "1111-1111-1111"
         );
-        user.ifPresent(System.out::println);
+        User user = authenticationController.register(u);
+        System.out.println(user.toString());
 
-        user = authenticationController.register(
+        u = new User(
                 "Bruce",
                 "Banner",
                 "bbanner@example.com",
@@ -31,9 +31,9 @@ public class Driver {
                 "123 Example St.",
                 "1111-1111-1111"
         );
-        user.ifPresent(System.out::println);
-
-        user = authenticationController.register(
+        user = authenticationController.register(u);
+        System.out.println(user.toString());
+        u = new User(
                 "Tony",
                 "Stark",
                 "tstark@example.com",
@@ -42,7 +42,8 @@ public class Driver {
                 "123 Example St.",
                 "1111-1111-1111"
         );
-        user.ifPresent(System.out::println);
+        user = authenticationController.register(u);
+        System.out.println(user.toString());
         
     }
 
