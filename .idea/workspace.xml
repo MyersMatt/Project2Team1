@@ -12,9 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/StoreItem.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +242,7 @@
       <workItem from="1661263386424" duration="571000" />
       <workItem from="1661264491567" duration="7486000" />
       <workItem from="1661292948639" duration="7156000" />
-      <workItem from="1661347191115" duration="9383000" />
+      <workItem from="1661347191115" duration="10413000" />
     </task>
     <servers />
   </component>
