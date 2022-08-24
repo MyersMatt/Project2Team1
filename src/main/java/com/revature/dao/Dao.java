@@ -9,10 +9,10 @@ import java.util.logging.Logger;
 public interface Dao <T>{
     Logger logger = Logger.getLogger(Dao.class.getName());
     Level level = Level.FINE;
-    void create(T t) throws SQLException;
+    void create(T t);
     //using optional as to not return null value from read
-    List<T> read() throws SQLException;
-    void update(T t) throws SQLException;
-    void delete(T t) throws SQLException;
-    ResultSet runCustomSql(String sql) throws SQLException;
+    List<T> read();
+    void update(T t);
+    void delete(T t);
+    ResultSet runCustomSql(String sql);
 }

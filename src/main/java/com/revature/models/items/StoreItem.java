@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class StoreItem {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "item_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "item_id",insertable = false, updatable = false)
 	private int itemId;
 	@Column(name = "item_name")
 	private String itemName;
@@ -30,36 +30,36 @@ public class StoreItem {
 		this.itemQuantity = itemQuantity;
 		this.description = description;
 	}
-	
-	public int getitemId() {
-		return this.itemId;
+
+	public String getItemName() {
+		return itemName;
 	}
 
-	public void setitemId(int itemId) {
-		this.itemId = itemId;
-	}
-
-	public String getitemName() {
-		return this.itemName;
-	}
-
-	public void setitemName(String itemName) {
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
-	public double getitemPrice() {
-		return this.itemPrice;
+	public double getItemPrice() {
+		return itemPrice;
 	}
 
-	public void setitemPrice(int itemPrice) {
+	public void setItemPrice(double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
-	
-	public int getitemQuantity() {
-		return this.itemQuantity;
+
+	public int getItemQuantity() {
+		return itemQuantity;
 	}
 
-	public void setitemQuantity(int itemQuantity) {
+	public void setItemQuantity(int itemQuantity) {
 		this.itemQuantity = itemQuantity;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

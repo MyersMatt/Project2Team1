@@ -24,28 +24,28 @@ public class UserDao implements Dao<User> {
 		this.sessionFactory = sessionFactory;
 	}
 	@Override
-	public void create(User user) throws SQLException {
+	public void create(User user) {
 		sessionFactory.getCurrentSession().save(user);
 	}
 
 	@Override
-	public List<User> read() throws SQLException {
+	public List<User> read() {
 		return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();
 	}
 
 	@Override
-	public void update(User user) throws SQLException {
+	public void update(User user){
 		sessionFactory.getCurrentSession().update(user);
 		
 	}
 
 	@Override
-	public void delete(User user) throws SQLException {
+	public void delete(User user) {
 		sessionFactory.getCurrentSession().delete(user);
 	}
 
 	@Override
-	public ResultSet runCustomSql(String sql) throws SQLException {
+	public ResultSet runCustomSql(String sql) {
 		// TODO Auto-generated method stub
 		return null;
 	}
