@@ -20,8 +20,9 @@ import javax.transaction.Transactional;
 @Repository("ItemDaoBean")
 public class ItemDao implements Dao<StoreItem>{
 
-	@Autowired
+
 	private final SessionFactory sessionFactory;
+	@Autowired
 	public ItemDao(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
 	}
