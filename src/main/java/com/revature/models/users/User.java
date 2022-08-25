@@ -31,21 +31,21 @@ public class User extends AnonymousUser{
 	
 	@Column(name="payment_info")
 	private String paymentInfo;
-	
+
+
 	public User() {
-		this("firstName","lastName","email","userName","password","shippingAddress","paymentInfo");
+		this("firstName","lastName","email","userName","password");
 		
 	}
-	
+
+	public User(String firstName, String lastName, String email, String username, String password){
+		this(firstName,lastName,email,username,password,"123E Example St.");
+	}
+	public User(String firstName, String lastName, String email, String username, String password, String shippingAddress) {
+		this(firstName,lastName,email,username,password,shippingAddress,"1111-1111-1111-1111");
+	}
 	public User(String firstName, String lastName, String email, String username, String password, String shippingAddress, String paymentInfo) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.shippingAddress = shippingAddress;
-		this.paymentInfo = paymentInfo;
-	
+		this(0,firstName,lastName,email,username,password,shippingAddress,paymentInfo);
 	}
 
 	public User(Integer id, String firstName, String lastName, String email, String username, String password, String shippingAddress, String paymentInfo) {
@@ -58,6 +58,8 @@ public class User extends AnonymousUser{
 		this.paymentInfo = paymentInfo;
 		this.id = id;
 	}
+
+
 
 	public Integer getId() {
 		return id;
