@@ -64,8 +64,6 @@ public class User extends AnonymousUser{
 		this.id = id;
 	}
 
-
-
 	public Integer getId() {
 		return id;
 	}
@@ -78,8 +76,8 @@ public class User extends AnonymousUser{
 		return username;
 	}
 
-	public void setUsername(String userName) {
-		this.username = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -130,15 +128,26 @@ public class User extends AnonymousUser{
 		this.paymentInfo = paymentInfo;
 	}
 
+	public List<OrderList> getHistory() {
+		return history;
+	}
+
+	public void setHistory(List<OrderList> history) {
+		this.history = history;
+	}
+
 	@Override
-	public String toString(){
-		return "User ID: " + id
-				+"\nusername: "			+ username
-				+"\nEmail: "			+ email
-				+"\npassword: "			+ password
-				+"\nFirst Name: "		+ firstName
-				+"\nLast Name: "		+ lastName
-				+"\nShipping Address: "	+ shippingAddress
-				+"\nPayment Info: " 		+ paymentInfo;
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
+				", email='" + email + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", shippingAddress='" + shippingAddress + '\'' +
+				", paymentInfo='" + paymentInfo + '\'' +
+				", history=" + history +
+				'}';
 	}
 }
