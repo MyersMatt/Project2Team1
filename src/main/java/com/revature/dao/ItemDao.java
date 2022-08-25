@@ -1,20 +1,13 @@
 package com.revature.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-
 import com.revature.models.items.StoreItem;
-import com.revature.utils.HibernateUtil;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.sql.ResultSet;
+import java.util.List;
 
 @Transactional
 @Repository("ItemDaoBean")
