@@ -1,9 +1,11 @@
 package com.revature.models.users;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name="users",uniqueConstraints = @UniqueConstraint(columnNames = {"username","email"}))
 public class User extends AnonymousUser{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="user_id", insertable = false, updatable = false)

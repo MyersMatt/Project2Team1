@@ -27,7 +27,7 @@ public class UserDao implements Dao<User> {
 	public void create(User user) {
 		sessionFactory.getCurrentSession().save(user);
 	}
-
+	
 	@Override
 	public List<User> read() {
 		return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();

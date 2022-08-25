@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 @Controller
 @RequestMapping("/authentication")
 @CrossOrigin(origins = "*")
+
 public class AuthenticationController {
     private static final Logger logger = Logger.getLogger(AuthenticationController.class.getName());
 
@@ -48,3 +49,4 @@ public class AuthenticationController {
         logger.log(Level.INFO,"Username or Email already registered");
     }
 }
+ 
