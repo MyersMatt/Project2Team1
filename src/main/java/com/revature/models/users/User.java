@@ -39,7 +39,7 @@ public class User extends AnonymousUser{
 	}
 
 	public User(String firstName, String lastName, String email, String username, String password){
-		this(firstName,lastName,email,username,password,"123E Example St.");
+		this(firstName,lastName,email,username,password,"123 Example St.");
 	}
 	public User(String firstName, String lastName, String email, String username, String password, String shippingAddress) {
 		this(firstName,lastName,email,username,password,shippingAddress,"1111-1111-1111-1111");
