@@ -1,6 +1,9 @@
 package com.revature.models.users;
 
+import com.revature.models.items.OrderList;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users",uniqueConstraints = @UniqueConstraint(columnNames = {"username","email"}))
@@ -31,21 +34,23 @@ public class User extends AnonymousUser{
 	
 	@Column(name="payment_info")
 	private String paymentInfo;
-	
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<OrderList> history;
+
 	public User() {
-		this("firstName","lastName","email","userName","password","shippingAddress","paymentInfo");
+		this("firstName","lastName","email","userName","password");
 		
 	}
-	
+
+	public User(String firstName, String lastName, String email, String username, String password){
+		this(firstName,lastName,email,username,password,"123 Example St.");
+	}
+	public User(String firstName, String lastName, String email, String username, String password, String shippingAddress) {
+		this(firstName,lastName,email,username,password,shippingAddress,"1111-1111-1111-1111");
+	}
 	public User(String firstName, String lastName, String email, String username, String password, String shippingAddress, String paymentInfo) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.shippingAddress = shippingAddress;
-		this.paymentInfo = paymentInfo;
-	
+		this(0,firstName,lastName,email,username,password,shippingAddress,paymentInfo);
 	}
 
 	public User(Integer id, String firstName, String lastName, String email, String username, String password, String shippingAddress, String paymentInfo) {
@@ -71,8 +76,8 @@ public class User extends AnonymousUser{
 		return username;
 	}
 
-	public void setUsername(String userName) {
-		this.username = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -123,15 +128,26 @@ public class User extends AnonymousUser{
 		this.paymentInfo = paymentInfo;
 	}
 
+	public List<OrderList> getHistory() {
+		return history;
+	}
+
+	public void setHistory(List<OrderList> history) {
+		this.history = history;
+	}
+
 	@Override
-	public String toString(){
-		return "User ID: " + id
-				+"\nusername: "			+ username
-				+"\nEmail: "			+ email
-				+"\npassword: "			+ password
-				+"\nFirst Name: "		+ firstName
-				+"\nLast Name: "		+ lastName
-				+"\nShipping Address: "	+ shippingAddress
-				+"\nPayment Info: " 		+ paymentInfo;
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
+				", email='" + email + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", shippingAddress='" + shippingAddress + '\'' +
+				", paymentInfo='" + paymentInfo + '\'' +
+				", history=" + history +
+				'}';
 	}
 }

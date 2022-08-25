@@ -1,32 +1,42 @@
 package com.revature.models.users;
 
-//
-//@Entity
-//@Table(name="admin")
-public class Admin extends User{
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	@Column(name="admin_id")
+import javax.persistence.*;
+@Entity
+@Table(name="admin")
+public class Admin{
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="admin_id")
 	private Integer adminId;
-	
+
+	@OneToOne(fetch= FetchType.LAZY)
+	@JoinColumn(name="username")
+	private User user;
+
 	public Admin() {
-		super();
+		this(0,new User());
 		
 	}
 	
-	public Admin(String firstName, String lastName, String email, String userName, String password, String shippingAddress, String paymentInfo, int adminId) {
-		super(firstName, lastName, email, userName, password, shippingAddress, paymentInfo);
+	public Admin(Integer adminId, User user) {
 		this.adminId = adminId;
-		
+		this.user = user;
 	
-	}
-	
-	public int getadminId() {
-		return this.adminId;
 	}
 
-	public void setadminId(int adminId) {
+	public Integer getAdminId() {
+		return adminId;
+	}
+
+	public void setAdminId(Integer adminId) {
 		this.adminId = adminId;
 	}
-	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

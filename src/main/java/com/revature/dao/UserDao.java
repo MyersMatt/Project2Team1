@@ -1,31 +1,31 @@
 package com.revature.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Logger;
-
 import com.revature.models.users.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.sql.ResultSet;
+import java.util.List;
+import java.util.logging.Logger;
 
 @Transactional
 @Repository("UserDaoBean")
 public class UserDao implements Dao<User> {
 	private static final Logger logger = Logger.getLogger(UserDao.class.getName());
 
-	@Autowired
+
 	private final SessionFactory sessionFactory;
 
+	@Autowired
 	public UserDao(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
 	}
 	@Override
-	public void create(User user) {
-		sessionFactory.getCurrentSession().save(user);
+	public void create(User user) throws DataIntegrityViolationException{
+			sessionFactory.getCurrentSession().save(user);
 	}
 	
 	@Override
