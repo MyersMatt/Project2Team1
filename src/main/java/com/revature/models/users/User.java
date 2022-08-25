@@ -1,6 +1,9 @@
 package com.revature.models.users;
 
+import com.revature.models.items.OrderList;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users",uniqueConstraints = @UniqueConstraint(columnNames = {"username","email"}))
@@ -32,6 +35,8 @@ public class User extends AnonymousUser{
 	@Column(name="payment_info")
 	private String paymentInfo;
 
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<OrderList> history;
 
 	public User() {
 		this("firstName","lastName","email","userName","password");
