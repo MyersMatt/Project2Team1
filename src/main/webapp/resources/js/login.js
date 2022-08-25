@@ -36,6 +36,8 @@ fetch("http://localhost:8080/Project2/api/authentication/register", requestOptio
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
+    let testData = response.JSON
+    console.log("The result of the JSON ping: " + testData);
 }
 
 function convert2JSON(god) {
