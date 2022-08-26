@@ -19,10 +19,14 @@ public class StoreItem {
 	@Column(name="description")
 	private String description;
 	public StoreItem() {
-		this(0, "itemName", 0.00, 0, "This is an item");
+		this( "itemName", 0.00, 0, "This is an item");
 		
 	}
-	
+
+	public StoreItem(String itemName, double itemPrice, int itemQuantity, String  description){
+		this(0,itemName,itemPrice,itemQuantity,description);
+	}
+
 	public StoreItem(int itemId, String itemName, double itemPrice, int itemQuantity, String description) {
 		this.itemId = itemId;
 		this.itemName = itemName;

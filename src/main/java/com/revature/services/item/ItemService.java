@@ -9,7 +9,7 @@ import java.util.Optional;
 public class ItemService {
 
     public Optional<StoreItem> add(StoreItem item) {
-        return Optional.empty();
+        return Optional.of(item);
     }
 
     public Boolean delete(int itemId) {
