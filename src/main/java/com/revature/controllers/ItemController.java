@@ -27,7 +27,7 @@ public class ItemController {
     }
 
     @PatchMapping("/update")
-    public @ResponseBody Boolean updateItem(@ResponseBody StoreItem item){
+    public @ResponseBody Boolean updateItem(@RequestBody StoreItem item){
         return itemService.update(item);
     }
 }
