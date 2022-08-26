@@ -66,4 +66,8 @@ public class StoreItem {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public int getItemId() {return itemId;}
+
+	public void setItemId(int itemId) {	this.itemId = itemId;}
 }
