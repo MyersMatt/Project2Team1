@@ -28,8 +28,10 @@ public class ItemService {
         return false;
     }
 
-    public Boolean update(StoreItem item) {
+    public Optional<StoreItem> update(StoreItem item) {
         itemDao.update(item);
-        return false;
+        List<StoreItem> itemList = itemDao.read();
+        for(StoreItem i : itemList) if(i.getItemId() == item.getItemId()) return Optional.of(i);
+        return Optional.empty();
     }
 }
