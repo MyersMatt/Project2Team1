@@ -37,6 +37,11 @@ header{
     border-bottom: 1px solid #bbc7c7;
     color: #005995;
 }
+.header2{
+    max-width: 1200px;
+    margin: 40px auto;
+    color: #005995;
+}
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;

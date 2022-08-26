@@ -15,12 +15,11 @@ function clearInputError(inputElement) {
     inputElement.classList.remove("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
-
 async function handleForm(ev) {
     ev.preventDefault();
     let rForm = ev.target;
     let regis_data = new FormData(rForm);
-    let raw = await convert2JSON(regis_data)
+    let raw = await convert2JSON(regis_data);
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");

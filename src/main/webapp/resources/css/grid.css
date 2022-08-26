@@ -1,7 +1,4 @@
-body {
-    font-family: 'Abel', sans-serif;
-}
-
+@import "master.css"
 article {
     background: #ddd;
     display: grid;
