@@ -20,4 +20,14 @@ public class ItemController {
         Optional<StoreItem> newItem = itemService.add(item);
         return newItem.orElse(null);
     }
+
+    @PostMapping("/delete")
+    public @ResponseBody Boolean deleteItem(@RequestBody int itemId){
+        return itemService.delete(itemId);
+    }
+
+    @PatchMapping("/update")
+    public @ResponseBody Boolean updateItem(@ResponseBody StoreItem item){
+        return itemService.update(item);
+    }
 }

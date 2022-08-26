@@ -11,4 +11,12 @@ public class ItemService {
     public Optional<StoreItem> add(StoreItem item) {
         return Optional.empty();
     }
+
+    public Boolean delete(int itemId) {
+        return false;
+    }
+
+    public Boolean update(StoreItem item) {
+        return false;
+    }
 }
