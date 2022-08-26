@@ -33,12 +33,17 @@ async function handleForm(ev) {
     };
 
 fetch("http://localhost:8080/Project2/api/authentication/register", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-    let testData = response.JSON
-    console.log("The result of the JSON ping: " + testData);
-}
+    .then((response) => response.json())
+    .then((data) => { const user_data = data.FormData })
+    .catch(console.error)
+    console.log("mee maw junction:   " + user_data)
+    }
+
+
+    // let testData = response.JSON
+    // console.log("The result of the JSON ping: " + result);
+
+// http://localhost:8080/Project2/api/authentication/register
 
 function convert2JSON(god) {
     let obj = {} 
