@@ -12,8 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/item/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/item/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +93,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources/html/items" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
@@ -250,7 +250,7 @@
       <workItem from="1661292948639" duration="7156000" />
       <workItem from="1661347191115" duration="19945000" />
       <workItem from="1661434672929" duration="17891000" />
-      <workItem from="1661521782321" duration="13878000" />
+      <workItem from="1661521782321" duration="16527000" />
     </task>
     <servers />
   </component>
