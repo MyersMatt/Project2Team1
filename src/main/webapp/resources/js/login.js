@@ -15,12 +15,11 @@ function clearInputError(inputElement) {
     inputElement.classList.remove("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
-
 async function handleForm(ev) {
     ev.preventDefault();
     let rForm = ev.target;
     let regis_data = new FormData(rForm);
-    let raw = await convert2JSON(regis_data)
+    let raw = await convert2JSON(regis_data);
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -33,18 +32,12 @@ async function handleForm(ev) {
     };
 
 fetch("http://localhost:8080/Project2/api/authentication/register", requestOptions)
-    .then((response) => response.json())
-    .then((data) => { const user_data = data.FormData })
-    .catch(console.error)
-    console.log("mee maw junction:   " + user_data)
-    }
-
-
-    // let testData = response.JSON
-    // console.log("The result of the JSON ping: " + result);
-
-// http://localhost:8080/Project2/api/authentication/register
-
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+    //let testData = response.JSON
+    console.log("The result of the JSON ping: " + result);
+}
 function convert2JSON(god) {
     let obj = {}
     for (let key of god.keys()) {

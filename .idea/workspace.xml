@@ -11,15 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/account.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/blank-profile-picture.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/checkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/grid.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
