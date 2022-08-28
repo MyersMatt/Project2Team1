@@ -53,4 +53,3 @@ public class AuthenticationController {
         return new ResponseEntity<>("The username or password you are using are incorrect", HttpStatus.FORBIDDEN);
     }
 }
- 

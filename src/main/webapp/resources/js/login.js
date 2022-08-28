@@ -15,7 +15,8 @@ function clearInputError(inputElement) {
     inputElement.classList.remove("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
-async function handleForm(ev) {
+
+async function makeReq (ev) {
     ev.preventDefault();
     let rForm = ev.target;
     let regis_data = new FormData(rForm);
@@ -31,12 +32,19 @@ async function handleForm(ev) {
     redirect: 'follow'
     };
 
-fetch("http://localhost:8080/Project2/api/authentication/register", requestOptions)
-    .then((response) => response.json())
-    .then((data) => { const user_data = data.FormData })
-    .catch(console.error)
-    console.log("mee maw junction:   " + user_data)
-    }
+    let response = await fetch("http://localhost:8080/Project2/api/authentication/register", requestOptions)
+    let data = await response.json()
+        const email = data.email
+        const firstName = data.firstName;
+        const lastName = data.lastName;
+        const password = data.password;
+        const paymentInfo = data.paymentinfo;
+        const shippingAddress = data.shippingAddress;
+        const username = data.username;
+        const userID = data.userID
+
+    document.getElementById('createAccount').reset();
+}
 
 
     // let testData = response.JSON
@@ -77,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
-    createAccountForm.addEventListener("submit", handleForm);
+    createAccountForm.addEventListener("submit", makeReq);
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {

@@ -36,7 +36,6 @@ public class UserDao implements Dao<User> {
 	@Override
 	public void update(User user){
 		sessionFactory.getCurrentSession().update(user);
-		
 	}
 
 	@Override

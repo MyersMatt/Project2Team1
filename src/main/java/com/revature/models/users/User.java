@@ -40,7 +40,6 @@ public class User extends AnonymousUser{
 
 	public User() {
 		this("firstName","lastName","email","userName","password");
-		
 	}
 
 	public User(String firstName, String lastName, String email, String username, String password){
