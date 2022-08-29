@@ -1,14 +1,14 @@
 /* @import "master.css"
  */
+
 article {
-    background: #ddd;
+    background: white;
     display: grid;
-    max-width: 500;
     grid-template-columns: .25fr .65fr .1fr;
 }
 
 article:nth-child(even) {
-    background: #eee;
+    background: whitesmoke;
 }
 
 .prod-text {
@@ -36,6 +36,7 @@ h2 {
     font-size: 2.5em;
 }
 .content-section {
+    width: 900px;
     margin: 1em;
 }
 

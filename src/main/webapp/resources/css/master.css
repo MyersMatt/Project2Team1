@@ -57,6 +57,11 @@ header {
     margin: 20px auto;
 }
 
+/* article {
+    height: 500px;
+    width: 300px;
+} */
+
 section.featured {
     grid-column: span 3;
     display: grid;
