@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../resources/css/master.css">
     <title>Sequoia Scientific</title>
     <div class="nav">
         <th><a href = "home.html">Home</a></th>
@@ -21,7 +21,7 @@
     </header>
     <main class = "grid-container">
         <article class="featured">
-            <img src="../images/distillation.png" alt="featured img"> 
+            <img src="../resources/images/distillation.png" alt="featured img">
             <div class="container">
                 <form class="form" id="login">
                     <h1 class="form__title">Login</h1>
@@ -39,7 +39,7 @@
                         <a href="#" class="form__link">Forgot your password?</a>
                     </p>
                     <p class="form__text">
-                        <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Register here.</a>
+                        <a class="form__link" href="../resources/html" id="linkCreateAccount">Don't have an account? Register here.</a>
                     </p>
                 </form>
                 <form class="form form--hidden" id="createAccount">
@@ -107,33 +107,33 @@
                     </div>
                     <button class="form__button" type="submit">Continue</button>
                     <p class="form__text">
-                        <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in.</a>
+                        <a class="form__link" href="../resources/html" id="linkLogin">Already have an account? Sign in.</a>
                     </p>
                 </form>
             </div>
         </article>
         <article>
-            <img src="../images/test-tubes.jpg" alt="featured img">
+            <img src="../resources/images/test-tubes.jpg" alt="featured img">
             <div>
                 <h3> We are special</h3>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, amet?</p>
             </div>
         </article>
         <article>
-            <img src="../images/lab_equip.png" alt="featured img">
+            <img src="../resources/images/lab_equip.png" alt="featured img">
             <div>
                 <h3> We are special</h3>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, amet?</p>
             </div>
         </article>
         <article>
-            <img src="../images/Album 3.png" alt="featured img">
+            <img src="../resources/images/Album%203.png" alt="featured img">
             <div>
                 <h3> We are special</h3>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, amet?</p>
             </div>
         </article>
     </main>
-    <script src="../js/login.js"></script>
+    <script src="../resources/js/login.js"></script>
 </body>
 </html>

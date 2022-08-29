@@ -28,9 +28,8 @@ public class AuthenticationService {
         List<User> users = userDao.read();
         for(User u : users){
             if(u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
-            else throw new InvalidCredentialsException(username,password);
         }
-        return Optional.empty();
+        throw new InvalidCredentialsException(username,password);
     }
 
     public Optional<User> register(User u) throws UserAlreadyExistsException {
