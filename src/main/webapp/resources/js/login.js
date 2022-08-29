@@ -46,10 +46,10 @@ async function makeReq (ev) {
     document.getElementById('createAccount').reset();
 }
 
-
+// 
     // let testData = response.JSON
     // console.log("The result of the JSON ping: " + result);
-
+// 
 // http://localhost:8080/Project2/api/authentication/register
 
 function convert2JSON(god) {

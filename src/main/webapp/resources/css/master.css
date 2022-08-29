@@ -4,43 +4,50 @@
     justify-content: space-between;
 }
 */
-.nav {
+
+* {
+    --color-primary: #005995;
+    --color-primary-dark: #252c6a;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+    font-family: 'Abel', sans-serif;
+}
+
+nav {
     display: block;
     float: right;
     text-decoration: none;
     
 }
-.nav a {
+nav a {
     display: block;
-    color: #005995;
+    color: var(--color-primary);
     text-align: center;
     padding: 14px 16px;
     float: left;
     text-decoration: none;
 }
-body{
+body {
     margin: 20px;
     background-repeat:no-repeat;
     background-size:cover;
     background: white;
-    --color-primary: #005995;
-    --color-primary-dark: #08007f;
-    --color-secondary: #252c6a;
-    --color-error: #cc3333;
-    --color-success: #4bb544;
-    --border-radius: 4px;
 }
 
-header{
+header {
     max-width: 1200px;
     margin: 40px auto;
     border-bottom: 1px solid #bbc7c7;
-    color: #005995;
+    color: var(--color-primary);
 }
-.header2{
+.title-row {
     max-width: 1200px;
     margin: 40px auto;
-    color: #005995;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.15rem;
+    color: var(--color-primary);
 }
 .grid-container{
     display: grid;
@@ -49,7 +56,8 @@ header{
     max-width: 1200px;
     margin: 20px auto;
 }
-article.featured{
+
+section.featured {
     grid-column: span 3;
     display: grid;
     grid-template-columns:  1fr 1fr;
@@ -59,17 +67,6 @@ article.featured{
     padding-bottom: 40px;
 }
 
-article{
-    display: none;
-}
-article img, article.featured img{
-    width:100%;
-    border: 4px solid #fff;
-    border-radius: 8px;
-}
-article p, article h3{
-    margin: 20px 10px;
-}
 .container {
     width: 400px;
     max-width: 400px;
@@ -83,7 +80,7 @@ article p, article h3{
 .container,
 .form__input,
 .form__button {
-    font: 500 1rem 'Quicksand', sans-serif;
+    font: 500 1rem;
 }
 
 .form--hidden {
@@ -101,6 +98,7 @@ article p, article h3{
 .form__title {
     margin-bottom: 2rem;
     text-align: center;
+    color: var(--color-primary)
 }
 
 .form__message {
@@ -118,6 +116,10 @@ article p, article h3{
 
 .form__input-group {
     margin-bottom: 1rem;
+}
+
+.form__input-group:hover {
+    font-weight: 700;
 }
 
 .form__input {
@@ -152,7 +154,7 @@ article p, article h3{
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #ffffff;
     border: none;
     border-radius: var(--border-radius);
