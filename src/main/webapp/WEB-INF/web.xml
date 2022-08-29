@@ -27,10 +27,31 @@
     <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
 
+<!--   <servlet>
+  <servlet-name>LandingPageController</servlet-name>
+  <servlet-class>com.example.controllers.LandingPageController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>LandingPageController</servlet-name>
+  <url-pattern>/</url-pattern>
+</servlet-mapping>
+ -->  
+  
   <!-- lines 31 to 33 do not work -->
   <welcome-file-list>
-        <welcome-file>WEB-INF/templates/index.html</welcome-file>
+        <welcome-file>resources/html/index.html</welcome-file>
   </welcome-file-list>
-  
+
 
 </web-app>
+
+
+
+
+
+
+
+
+
+
