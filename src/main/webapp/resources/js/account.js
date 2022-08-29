@@ -25,7 +25,7 @@ async function handleForm(ev) {
     myHeaders.append("Content-Type", "application/json");
 
     var requestOptions = {
-    method: 'POST',
+    method: 'PATCH',
     headers: myHeaders,
     body: raw,
     redirect: 'follow'
