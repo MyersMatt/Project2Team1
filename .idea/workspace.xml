@@ -11,11 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/Products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/grid.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/Aboreto.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
