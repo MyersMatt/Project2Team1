@@ -31,4 +31,10 @@ public class ItemController {
         Optional<StoreItem> updatedItem = itemService.update(item);
         return updatedItem.orElse(null);
     }
+
+    @PostMapping("/getItem")
+    public @ResponseBody StoreItem getItem(@RequestBody int itemId){
+
+        return itemService.getItem(itemId).orElse(null);
+    }
 }

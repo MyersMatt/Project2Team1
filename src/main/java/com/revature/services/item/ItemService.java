@@ -34,4 +34,10 @@ public class ItemService {
         for(StoreItem i : itemList) if(i.getItemId() == item.getItemId()) return Optional.of(i);
         return Optional.empty();
     }
+
+    public Optional<StoreItem> getItem(int itemId) {
+        List<StoreItem> items = itemDao.read();
+        for(StoreItem item: items){if(item.getItemId() == itemId) return Optional.of(item);}
+        return Optional.empty();
+    }
 }
