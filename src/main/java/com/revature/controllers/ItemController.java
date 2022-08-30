@@ -5,6 +5,8 @@ import com.revature.services.item.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.LinkedHashMap;
 import java.util.Optional;
 
 @Controller
@@ -27,12 +29,16 @@ public class ItemController {
     }
 
     @PatchMapping("/update")
-    public @ResponseBody StoreItem updateItem(@RequestBody StoreItem item){
-        Optional<StoreItem> updatedItem = itemService.update(item);
+    public @ResponseBody StoreItem updateItem(@RequestBody LinkedHashMap<String,Integer> body){
+        Optional<StoreItem> item  = itemService.getItem(body.get("itemId"));
+        Optional<StoreItem> updatedItem = Optional.empty();
+        if(item.isPresent()){ item.get().setItemQuantity(body.get("quantity"));
+             updatedItem = itemService.update(item.get());
+        }
         return updatedItem.orElse(null);
     }
-
-    @PostMapping("/getItem")
+    
+    @GetMapping("/getItem")
     public @ResponseBody StoreItem getItem(@RequestBody int itemId){
 
         return itemService.getItem(itemId).orElse(null);

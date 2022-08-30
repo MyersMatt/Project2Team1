@@ -18,6 +18,9 @@ public class StoreItem {
 	private int itemQuantity;
 	@Column(name="description")
 	private String description;
+
+	@Column(name="image_url")
+	private String imageUrl;
 	public StoreItem() {
 		this( "itemName", 0.00, 0, "This is an item");
 		
