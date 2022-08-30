@@ -25,7 +25,6 @@ public class AuthenticationService {
     }
 
     public Optional<User> login(String username, String password) throws InvalidCredentialsException {
-    	System.out.println("user is " + username);
     	List<User> users = userDao.read();
         for(User u : users){
             if(u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
