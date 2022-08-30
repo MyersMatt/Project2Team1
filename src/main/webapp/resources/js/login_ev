@@ -16,29 +16,56 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
 
-async function doTheFetch (form_info, _api) {
+async function makeFetch (ev) {
+    ev.preventDefault();
+    let form_info = new FormData(ev.target);
+    let raw = await convert2JSON(form_info);
 
-    let raw = convert2JSON(form_info);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
     };
+
+    let response = await fetch("http://localhost:8080/Project2/api/authentication/login", requestOptions)
+    let data = await response.json()
+    const firstName = data.firstName;
+    const lastName = data.lastName;
+    console.log(`It appears your login of ${firstName} ${lastName} was successful`)
+        // const email = data.email
+        // const password = data.password;
+        // const paymentInfo = data.paymentinfo;
+        // const shippingAddress = data.shippingAddress;
+        // const username = data.username;
+        // const userID = data.userID
+    // document.getElementById('createAccount').reset();
+}
+
+async function doTheFetch (requestOptions, _api) {
 
     let response = await fetch("http://localhost:8080/Project2/api/authentication/"+_api, requestOptions)
     let data = await response.json()
-    if (response.status == 200) {
-        const firstName = data.firstName;
-        const lastName = data.lastName;
-        console.log(`Success!  Your login of ${firstName} ${lastName} was successful`);
-    }   else {
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
-    }
+    const firstName = data.firstName;
+    const lastName = data.lastName;
+    console.log(`It appears your login of ${firstName} ${lastName} was successful`)
+        // const email = data.email
+        // const password = data.password;
+        // const paymentInfo = data.paymentinfo;
+        // const shippingAddress = data.shippingAddress;
+        // const username = data.username;
+        // const userID = data.userID
+
 }
+
+// 
+    // let testData = response.JSON
+    // console.log("The result of the JSON ping: " + result);
+// 
+// http://localhost:8080/Project2/api/authentication/register
 
 function convert2JSON(payload) {
     let obj = {} 
@@ -64,22 +91,35 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
-    createAccountForm.addEventListener("submit", ev => {
-        ev.preventDefault();
-        let form_info = new FormData(ev.target);
-        doTheFetch(form_info, 'register');
-        createAccountForm.reset();
+    // loginForm.addEventListener("submit", e => {
+    //     e.preventDefault();
 
-    });
+    //     // Perform your AJAX/Fetch login
+
+    //     setFormMessage(loginForm, "error", "Invalid username/password combination");
+    // });
+
+    createAccountForm.addEventListener("submit", makeFetch);
 
     loginForm.addEventListener("submit", ev => {
         ev.preventDefault();
         let form_info = new FormData(ev.target);
-        doTheFetch(form_info, 'login');
-//      setFormMessage(loginForm, "error", "Invalid username/password combination");
-        // console.log(`Yep... back where we started with ${firstName}`);
-        loginForm.reset();
+        let raw = convert2JSON(form_info);
+    
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+    
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+        doTheFetch(requestOptions, 'login');
+        
+
     });
+
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
@@ -92,4 +132,4 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInputError(inputElement);
         });
     });
-})
+});

@@ -40,10 +40,8 @@
   
   <!-- lines 31 to 33 do not work -->
   <welcome-file-list>
-        <welcome-file>resources/html/index.html</welcome-file>
+        <welcome-file>resources/html/products.html</welcome-file>
   </welcome-file-list>
-
-
 </web-app>
 
 
