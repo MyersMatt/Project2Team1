@@ -31,12 +31,12 @@ async function doTheFetch (form_info, _api) {
 
     let response = await fetch("http://localhost:8080/Project2/api/authentication/"+_api, requestOptions)
     let data = await response.json()
-    if (response.status == 200) {
+    if (!response.status == 403) {
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+    }   else {
         const firstName = data.firstName;
         const lastName = data.lastName;
         console.log(`Success!  Your login of ${firstName} ${lastName} was successful`);
-    }   else {
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
     }
 }
 
@@ -51,6 +51,7 @@ function convert2JSON(payload) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    // const eRGEX = [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4};
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -89,15 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Username must be at least 8 characters in length");
             }
-            if (e.target.id === "signupEmail" && e.target.value.length > 0 && e.target.value.length < 1) {   //Regex:   [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}
+            if (e.target.id === "signupEmail" && e.target.value.length > 0 && e.target.value.length < 1) {
                 setInputError(inputElement, "Email must be filled out.");
             }
-            if (e.target.id === "signupFirstname" && e.target.value.length > 0 && e.target.value.length < 1) {
-                setInputError(inputElement, "First name must be filled out.");
-            }
-            if (e.target.id === "signupLastname" && e.target.value.length > 0 && e.target.value.length < 1) {
-                setInputError(inputElement, "Last name must be filled out.");
-            }
+            // if (e.target.id === "signupEmail" && e.target.value.length > 0 && eRGEX.test(e.target.value)) {   //Regex:   [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}
+            //     setInputError(inputElement, "Invalid email address");
+            // }
+            // if (e.target.id === "signupFirstname" && e.target.value.length > 0 && e.target.value.length < 1) {
+            //     setInputError(inputElement, "First name must be filled out.");
+            // }
+            // if (e.target.id === "signupLastname" && e.target.value.length > 0 && e.target.value.length < 1) {
+            //     setInputError(inputElement, "Last name must be filled out.");
+            // }
             
         });
 
