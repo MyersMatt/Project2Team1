@@ -23,34 +23,34 @@ import java.util.logging.Logger;
 public class AuthenticationController {
     private static final Logger logger = Logger.getLogger(AuthenticationController.class.getName());
 
-    private final  AuthenticationService authenticationService;
+    private final AuthenticationService authenticationService;
 
     @Autowired
-    public AuthenticationController(AuthenticationService authenticationService){
+    public AuthenticationController(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping ("/register")
+    @PostMapping("/register")
     public @ResponseBody User register(@RequestBody User u) {
-        Optional<User> user  = authenticationService.register(u);
+        Optional<User> user = authenticationService.register(u);
         return user.orElse(null);
     }
 
     @PostMapping("/login")
     public @ResponseBody User login(@RequestBody
-                                    LinkedHashMap<String,String> body){
-        Optional<User> user = authenticationService.login(body.get("username"),body.get("password"));
+                                    LinkedHashMap<String, String> body) {
+        Optional<User> user = authenticationService.login(body.get("username"), body.get("password"));
         return user.orElse(null);
     }
 
     @ExceptionHandler({UserAlreadyExistsException.class, NestedServletException.class})
-    public ResponseEntity<String> UserAlreadyExistsHandler(UserAlreadyExistsException ex){
-        logger.log(Level.INFO,"Username or Email already registered");
+    public ResponseEntity<String> UserAlreadyExistsHandler(UserAlreadyExistsException ex) {
+        logger.log(Level.INFO, "Username or Email already registered");
         return new ResponseEntity<>("The username or email you are trying to use are already in use", HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler({InvalidCredentialsException.class})
-    public ResponseEntity<String>  InvalidCredentialsHandler(InvalidCredentialsException ex){
+    public ResponseEntity<String> InvalidCredentialsHandler(InvalidCredentialsException ex) {
         return new ResponseEntity<>("The username or password you are using are incorrect", HttpStatus.FORBIDDEN);
     }
 }

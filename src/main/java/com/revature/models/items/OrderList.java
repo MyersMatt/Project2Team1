@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="order_lists")
+@Table(name = "order_lists")
 public class OrderList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,24 +18,24 @@ public class OrderList {
     @Column(name = "list_name")
     private String listName;
 
-    @ManyToMany(cascade =  CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "list_item_junction",
-            joinColumns = {@JoinColumn(name="order_id")},
-            inverseJoinColumns = {@JoinColumn(name="item_id")}
+            joinColumns = {@JoinColumn(name = "order_id")},
+            inverseJoinColumns = {@JoinColumn(name = "item_id")}
     )
     private List<StoreItem> orderList;
 
-    @ManyToOne(cascade =  CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;
 
-    public OrderList(){
+    public OrderList() {
         this.orderList = new ArrayList<>();
     }
 
-    public OrderList(Integer orderId, String listName, List<StoreItem> orderList, User user){
+    public OrderList(Integer orderId, String listName, List<StoreItem> orderList, User user) {
         this.orderId = orderId;
         this.listName = listName;
         this.orderList = orderList;

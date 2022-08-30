@@ -14,40 +14,41 @@ import java.util.logging.Logger;
 @Transactional
 @Repository("UserDaoBean")
 public class UserDao implements Dao<User> {
-	private static final Logger logger = Logger.getLogger(UserDao.class.getName());
+    private static final Logger logger = Logger.getLogger(UserDao.class.getName());
 
 
-	private final SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-	@Autowired
-	public UserDao(SessionFactory sessionFactory){
-		this.sessionFactory = sessionFactory;
-	}
-	@Override
-	public void create(User user) throws DataIntegrityViolationException{
-			sessionFactory.getCurrentSession().save(user);
-	}
-	
-	@Override
-	public List<User> read() {
-		return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();
-	}
+    @Autowired
+    public UserDao(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
-	@Override
-	public void update(User user){
-		sessionFactory.getCurrentSession().update(user);
-		
-	}
+    @Override
+    public void create(User user) throws DataIntegrityViolationException {
+        sessionFactory.getCurrentSession().save(user);
+    }
 
-	@Override
-	public void delete(User user) {
-		sessionFactory.getCurrentSession().delete(user);
-	}
+    @Override
+    public List<User> read() {
+        return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();
+    }
 
-	@Override
-	public ResultSet runCustomSql(String sql) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public void update(User user) {
+        sessionFactory.getCurrentSession().update(user);
+
+    }
+
+    @Override
+    public void delete(User user) {
+        sessionFactory.getCurrentSession().delete(user);
+    }
+
+    @Override
+    public ResultSet runCustomSql(String sql) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

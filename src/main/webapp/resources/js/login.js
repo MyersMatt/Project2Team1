@@ -26,20 +26,20 @@ async function handleForm(ev) {
     myHeaders.append("Content-Type", "application/json");
 
     var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
     };
 
-fetch("http://localhost:8080/Project2/api/authentication/register", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    fetch("http://localhost:8080/Project2/api/authentication/register", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 }
 
 function convert2JSON(god) {
-    let obj = {} 
+    let obj = {}
     for (let key of god.keys()) {
         obj[key] = god.get(key);
     }

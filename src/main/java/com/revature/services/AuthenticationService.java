@@ -26,22 +26,21 @@ public class AuthenticationService {
 
     public Optional<User> login(String username, String password) throws InvalidCredentialsException {
         List<User> users = userDao.read();
-        for(User u : users){
-            if(u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
-            else throw new InvalidCredentialsException(username,password);
+        for (User u : users) {
+            if (u.getUsername().equals(username) && u.getPassword().equals(password)) return Optional.of(u);
         }
-        return Optional.empty();
+        throw new InvalidCredentialsException(username, password);
     }
 
     public Optional<User> register(User u) throws UserAlreadyExistsException {
         try {
             userDao.create(u);
-        }catch (DataIntegrityViolationException e){
+        } catch (DataIntegrityViolationException e) {
             throw new UserAlreadyExistsException();
         }
         List<User> users = userDao.read();
-        for(User i : users)
-            if(i.getUsername().equals(u.getUsername())) return Optional.of(i);
+        for (User i : users)
+            if (i.getUsername().equals(u.getUsername())) return Optional.of(i);
         return Optional.empty();
     }
 

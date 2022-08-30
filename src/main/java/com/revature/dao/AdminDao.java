@@ -5,7 +5,7 @@ import com.revature.models.users.Admin;
 import java.sql.ResultSet;
 import java.util.List;
 
-public class AdminDao implements Dao<Admin>{
+public class AdminDao implements Dao<Admin> {
     @Override
     public void create(Admin admin) {
 

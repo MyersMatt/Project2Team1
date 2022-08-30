@@ -1,8 +1,8 @@
 package com.revature.exceptions;
 
 public class UserAlreadyExistsException extends RuntimeException {
-	public UserAlreadyExistsException() {
-		super("The username or email you are using already exists");
-	}
+    public UserAlreadyExistsException() {
+        super("The username or email you are using already exists");
+    }
 
 }
