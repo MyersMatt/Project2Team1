@@ -1,12 +1,14 @@
 @import "master.css";
-.item__div{
+
+.item__div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 /*overwrite the size of the form buttons in the master css file*/
-.form__button{
+.form__button {
     width: 33%;
     text-align: center;
 }

@@ -38,7 +38,7 @@ deleteButton.addEventListener("click", async () => {
     body.innerHTML = "";
     await addForm("delete");
     newButton = document.getElementById("submit-delete-item-button");
-    newButton.addEventListener("click", async() => {
+    newButton.addEventListener("click", async () => {
         const deleteAPI = "/delete"
         console.log("Delete API: " + `${API + deleteAPI}`);
     })
