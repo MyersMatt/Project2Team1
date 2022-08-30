@@ -12,8 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/items.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/items.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +27,10 @@
       <list>
         <option value="Interface" />
         <option value="spring-beans.schema" />
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -74,7 +76,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/matt/Documents/Notes-and-Demos/Week7/Examples/SpringERS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/matt/IdeaProjects/HandsOn&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -252,7 +254,8 @@
       <workItem from="1661347191115" duration="19945000" />
       <workItem from="1661434672929" duration="17891000" />
       <workItem from="1661521782321" duration="17853000" />
-      <workItem from="1661781604559" duration="5876000" />
+      <workItem from="1661781604559" duration="12296000" />
+      <workItem from="1661867830095" duration="3373000" />
     </task>
     <servers />
   </component>
