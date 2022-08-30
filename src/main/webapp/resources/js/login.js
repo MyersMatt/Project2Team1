@@ -83,9 +83,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
+            if (e.target.id === "signupPassword" && e.target.value.length > 0 && e.target.value.length < 8) {
+                setInputError(inputElement, "Password must be at least 8 characters in length");
+            }
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Username must be at least 8 characters in length");
             }
+            if (e.target.id === "signupEmail" && e.target.value.length > 0 && e.target.value.length < 1) {   //Regex:   [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}
+                setInputError(inputElement, "Email must be filled out.");
+            }
+            if (e.target.id === "signupFirstname" && e.target.value.length > 0 && e.target.value.length < 1) {
+                setInputError(inputElement, "First name must be filled out.");
+            }
+            if (e.target.id === "signupLastname" && e.target.value.length > 0 && e.target.value.length < 1) {
+                setInputError(inputElement, "Last name must be filled out.");
+            }
+            
         });
 
         inputElement.addEventListener("input", e => {
