@@ -1,13 +1,9 @@
 @import "master.css";
 
-
-.button {
-    background-color: #0096FF; /* Bright Blue */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+body{
+    alignment: center;
+}
+.form__button{
+    width: 33%;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 }

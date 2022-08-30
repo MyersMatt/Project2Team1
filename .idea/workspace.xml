@@ -11,9 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/updateItem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/items.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/items.js" afterDir="false" />
     </list>
@@ -255,7 +257,7 @@
       <workItem from="1661434672929" duration="17891000" />
       <workItem from="1661521782321" duration="17853000" />
       <workItem from="1661781604559" duration="12296000" />
-      <workItem from="1661867830095" duration="3373000" />
+      <workItem from="1661867830095" duration="7076000" />
     </task>
     <servers />
   </component>
