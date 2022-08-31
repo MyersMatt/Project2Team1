@@ -12,7 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/items/StoreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/items/StoreItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/getItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/getItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/updateItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/updateItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/Equip_ment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/equip_ment.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +256,7 @@
       <workItem from="1661521782321" duration="17853000" />
       <workItem from="1661781604559" duration="12296000" />
       <workItem from="1661867830095" duration="18241000" />
-      <workItem from="1661956312844" duration="6618000" />
+      <workItem from="1661956312844" duration="12890000" />
     </task>
     <servers />
   </component>
