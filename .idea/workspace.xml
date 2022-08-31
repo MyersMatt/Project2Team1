@@ -11,27 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/Check4Guest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Color-Block.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Color-Block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Images/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Images/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/prod-JD.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/prod-JD.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +251,7 @@
       <workItem from="1661521782321" duration="17853000" />
       <workItem from="1661781604559" duration="12296000" />
       <workItem from="1661867830095" duration="18241000" />
-      <workItem from="1661956312844" duration="398000" />
+      <workItem from="1661956312844" duration="2222000" />
     </task>
     <servers />
   </component>
