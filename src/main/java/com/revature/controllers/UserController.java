@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 
 @Controller
-@RequestMapping("/update")
+@RequestMapping("/user")
 @CrossOrigin(origins = "*") 
 
 public class UserController {
