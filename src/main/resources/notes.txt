@@ -1,0 +1,57 @@
+/*
+ * What is needed to display a product list.
+ * 
+ * Two views are needed:  one for a potential customer; the other for an admin.
+ * What is different between them?
+ * The customer view must, at a minimum, contain the following item elements:
+ *      - animage
+ *      - item name
+ *      - description
+ *      - price
+ * 
+ * The admin view will contain all of the above, PLUS
+ *      - number of items in inventory 
+ *      - possibly the number of that item that has sold in a given period
+ *      - maybe other info, TBD.  
+ * 
+ * Here is one approach:  create an isAdmin boolean which, if false, suppresses items customers do not need to see.
+ * This could be accomplished with CSS by altering the additional info, effectively inhibiting it from appearing. 
+ * 
+ * In addition to the other elements on the page, eg Title, navigation bar, logo possibly, etc, 
+ * 
+ * create <div class='prod-rows'> for the entire row.  Each row is three compartments, an image, text-desc, and price
+ * 
+ *      create <div class='item-img'> a box sans borders containing image ref
+ *      create <div class='item-name'>, a larger h2 or h3 font bolded item name>
+ *      create <div class='item-desc'>, a p font detailing description of the item
+ *      create <div class='item-price', self-expl.
+ * 
+ * Within each <div> the text comes from a database of products, gotten from the productDAO
+ * 
+ * 
+ *
+
+ <div id="mainContent">
+ <div id="item-img" 
+ <div id="item-name"
+ <div id="item-desc"
+ <div id="item-price"
+
+ here we use JS to either display an "Own It Now" button if whoever is signed on is a customer  <or>
+ if user signed on is an Admin, instead of Own It button, we could show "Qty Remaining"
+ 
+ <div id="isAdmin" 
+    isAdmin = true: <show qty remaining>
+    isAdmin = false: <show "Own It" button
+
+ <div id="cart" 
+    - updates with specific item_ids 
+
+ #header {
+
+ }
+
+ #footer {
+
+ }
+

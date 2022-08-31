@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
+    <root id="1">
+      <ServerVersion>14.5</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="template1"/>
+    <database id="3" parent="1" name="template0"/>
+    <database id="4" parent="1" name="ersproject"/>
+    <database id="5" parent="1" name="test_ersproject"/>
+    <database id="6" parent="1" name="postgres"/>
+    <database id="7" parent="1" name="chinook"/>
+    <database id="8" parent="1" name="ecommerce">
+      <Current>1</Current>
+    </database>
+  </database-model>
+</dataSource>
