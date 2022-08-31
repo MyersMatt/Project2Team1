@@ -24,10 +24,17 @@ public class UserDao implements Dao<User> {
         this.sessionFactory = sessionFactory;
     }
 
+<<<<<<< HEAD
     @Override
     public void create(User user) throws DataIntegrityViolationException {
         sessionFactory.getCurrentSession().save(user);
     }
+=======
+	@Override
+	public void update(User user){
+		sessionFactory.getCurrentSession().update(user);
+	}
+>>>>>>> c610df0 (added form reset and tested mechanism to add innerHtml to Account form)
 
     @Override
     public List<User> read() {

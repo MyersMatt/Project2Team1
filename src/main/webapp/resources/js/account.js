@@ -31,7 +31,7 @@ async function handleForm(ev) {
     redirect: 'follow'
     };
 
-fetch("http://localhost:8080/Project2/api/authentication/updateUser", requestOptions)
+fetch("http://localhost:8080/Project2/api/update/updateUser", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
