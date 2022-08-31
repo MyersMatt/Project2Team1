@@ -28,36 +28,36 @@ function ready() {
 }
 
 
+
+
+
 function purchaseClicked() {
-    // alert("Thank you for your purchase")
+
+    //is user registered or a guest:  check
+
+        //if registered, create order history
+
+
+        //if not, do something else (or not)
+
+
+    //need to update item quantity in item
+
+
+    //alerting about the purchase
+    alert("Thank you for your purchase")
+
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    //////////
 
-    // var cartItemsQty = document.getElementsByClassName('cart-items')
-
-    console.log(cartItems.length)
-    // for (var i = 0; i < cartItems.length; i++) {
-    //     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    //     console.log(cartItemNames)
-    // }
-    // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')[0]
-    // var iTitle = cartItemNames.innerText[0]
-    // console.log(iTitle[0])
-
-    // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    // for (var i = 0; i < cartItemNames.length; i++) {
-    //     if (cartItemNames[i].innerText == title) {
-    //         alert(`The ${title} has already been added to your lab cart`)
-    //         return
-    //     }
-    // }
-
-    ///////////
+    //removing the items 
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
-    updateCartTotal()
+    updateCartTotal()   //makes total zero
 }
+
+
+
 
 
 function removeCartItem(event) {
@@ -132,17 +132,3 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
-
-// function updateCartTotal() {
-//     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-//     var cartRows = cartItemContainer.getElementsByClassName(newFunction())
-//     var total = 0
-//     for (var i = 0; i < cartRows.length; i++) {
-//         var cartRow = cartRows[i]
-//         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-//         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-//         var price = parseFloat(priceElement.innerText.replace('$', ''))
-//         var quantity = quantityElement.value
-//         total = total + (price * quantity)
-//     }
-// }
