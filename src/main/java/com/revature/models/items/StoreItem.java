@@ -18,7 +18,6 @@ public class StoreItem {
     private int itemQuantity;
     @Column(name = "description",nullable = false)
     private String description;
-
     @Column(name = "image_url",nullable = false)
     private String imageUrl;
 

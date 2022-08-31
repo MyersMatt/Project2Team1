@@ -29,8 +29,30 @@ function ready() {
 
 
 function purchaseClicked() {
-    alert("Thank you for your purchase")
+    // alert("Thank you for your purchase")
     var cartItems = document.getElementsByClassName('cart-items')[0]
+    //////////
+
+    // var cartItemsQty = document.getElementsByClassName('cart-items')
+
+    console.log(cartItems.length)
+    // for (var i = 0; i < cartItems.length; i++) {
+    //     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    //     console.log(cartItemNames)
+    // }
+    // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')[0]
+    // var iTitle = cartItemNames.innerText[0]
+    // console.log(iTitle[0])
+
+    // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    // for (var i = 0; i < cartItemNames.length; i++) {
+    //     if (cartItemNames[i].innerText == title) {
+    //         alert(`The ${title} has already been added to your lab cart`)
+    //         return
+    //     }
+    // }
+
+    ///////////
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }

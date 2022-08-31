@@ -1,4 +1,4 @@
-<div class="container" id="add-item-form">
+<form class="container" id="add-item-form">
     <h1 class="form__title"> Add a new item to the store.</h1>
     <div class="form__message form__message--error"></div>
     <div class="form__input-group"> Item Name
@@ -6,7 +6,7 @@
                 autofocus
                 class="form__input"
                 id="item-name"
-                name="Item Name"
+                name="itemName"
                 placeholder="item name"
                 type="text">
         <div class="form__input-error-message"></div>
@@ -16,7 +16,7 @@
                 autofocus
                 class="form__input"
                 id="item-price"
-                name="Item Price"
+                name="itemPrice"
                 placeholder=0.00
                 type="number">
         <div class="form__input-error-message"></div>
@@ -26,21 +26,32 @@
                 autofocus
                 class="form__input"
                 id="item-quantity"
-                name="Item Quantity"
+                name="itemQuantity"
                 placeholder=0
                 type="number">
         <div class="form__input-error-message"></div>
     </div>
-    <div class="form__input-group"> Description
+    <div class="form__input"> Description
         <input
                 autofocus
                 class="form__input"
                 id="description"
-                name="Description"
+                name="description"
                 placeholder="Input an item description"
+                type="text"
+        >
+        <div class="form__input-error-message"></div>
+    </div>
+    <div class="form__input"> Image URL
+        <input
+                autofocus
+                class="form__input"
+                id="imageUrl"
+                name="imageUrl"
+                placeholder="Input the image URL"
                 type="text"
         >
         <div class="form__input-error-message"></div>
         <button class="form__button" id="submit-add-item-button" style="float: right">Submit</button>
     </div>
-</div>
+</form>

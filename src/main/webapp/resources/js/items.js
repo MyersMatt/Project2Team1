@@ -6,6 +6,13 @@ let updateButton = document.getElementById("update-item-button");
 let body = document.getElementById("item-manipulation-field")
 let newButton;
 
+function convert2JSON(payload) {
+    let obj = {} 
+    for (let key of payload.keys()) {
+        obj[key] = payload.get(key);}
+    return JSON.stringify(obj);
+    }
+
 async function addForm(arg) {
     let response;
     switch (arg) {
@@ -25,11 +32,33 @@ async function addForm(arg) {
 addButton.addEventListener("click", async () => {
         body.innerHTML = "";
         await addForm("add");
-        newButton = document.getElementById("submit-add-item-button");
-        newButton.addEventListener("click", async () => {
+        const addItemForm = document.getElementById("add-item-form");
+        addItemForm.addEventListener("submit", async (ev) => {
+            ev.preventDefault();
+            let form_info = new FormData(ev.target);
+            let payload = convert2JSON(form_info);
+            console.log(payload);
             const addAPI = "/add";
-            console.log("Add API: " + `${API + addAPI}`);
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+        
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: payload,
+                redirect: 'follow'
+            };
+            console.log(requestOptions)
+            let response = await fetch(`${API + addAPI}`, requestOptions)
+            let data = await response.json()
+
         })
+
+        // newButton = document.getElementById("submit-add-item-button");
+        // newButton.addEventListener("click", async () => {
+        // })
+        // console.log("Add API: " + );
+
     }
 );
 
