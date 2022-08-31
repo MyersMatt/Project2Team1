@@ -11,53 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/getItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/account.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/blank-profile-picture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/AdminDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/ItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/ItemDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/InvalidCredentialsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/InvalidCredentialsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/NotLoggedInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/NotLoggedInException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/UserAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/items/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/items/OrderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/items/StoreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/items/StoreItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/AnonymousUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/AnonymousUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/item/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/item/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/beans.template" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/beans.template" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Color-Block.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Color-Block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Images/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Images/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/Register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/lesson3-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/prod-JD.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/prod-JD.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Marked/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Marked/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/extra.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/extra.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/items.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/Index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/grid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/items.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
