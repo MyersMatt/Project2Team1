@@ -23,20 +23,7 @@ public class StoreItem {
     private String imageUrl;
 
     public StoreItem() {
-        this("itemName", 0.00, 0, "This is an item");
 
-    }
-
-    public StoreItem(String itemName, double itemPrice, int itemQuantity, String description) {
-        this(0, itemName, itemPrice, itemQuantity, description);
-    }
-
-    public StoreItem(int itemId, String itemName, double itemPrice, int itemQuantity, String description) {
-        this.itemId = itemId;
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-        this.itemQuantity = itemQuantity;
-        this.description = description;
     }
 
     public String getItemName() {
@@ -77,5 +64,13 @@ public class StoreItem {
 
     public void setItemId(int itemId) {
         this.itemId = itemId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
