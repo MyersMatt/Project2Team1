@@ -25,6 +25,10 @@ function ready() {
         button.addEventListener('click', addToCartClicked)
     }
 
+    // var addToCartButtons = document.querySelector('buy-btn');
+    // var 
+
+
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 
 

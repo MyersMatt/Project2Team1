@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init(){
     container = document.getElementById('prod-list');
-    
+    // var addToCartButtons = document.getElementsByClassName('buy-btn')  ////////
+
     fetch(req)
     .then((response)=>{
         if(response.ok){
@@ -37,9 +38,8 @@ function init(){
             </div>`
             art.innerHTML = prod_row_contents;
             container.append(art);
-            // container.getElementsByClassName('buy-btn')[i].addEventListener('click'),addToCartClicked) 
-            cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-
+            // var button = addToCartButtons[i]        ////////
+            // button.addEventListener('click', addToCartClicked)      ///////
         }
     })
     .catch((err)=>{
