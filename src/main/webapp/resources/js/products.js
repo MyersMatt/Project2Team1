@@ -1,10 +1,12 @@
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     ready()
 }
 
-function ready() {
+function ready() {  
+
     let removeCartItemButtons = document.getElementsByClassName('btn-danger');
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         button = removeCartItemButtons[i];
@@ -24,6 +26,8 @@ function ready() {
     }
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+
+
 
 }
 
@@ -131,4 +135,3 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
-

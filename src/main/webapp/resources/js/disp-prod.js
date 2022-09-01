@@ -4,6 +4,7 @@ let uri = 'http://localhost:8080/Project2/api/items/getAllItems';
 let req = new Request(uri, {method: 'GET'});
 let container;
 
+
 document.addEventListener('DOMContentLoaded', init);
 
 function init(){
@@ -18,7 +19,8 @@ function init(){
         }
     })
     .then((json)=>{
-        for (var i = 0; i < 10; i++) {
+        const length = Object.keys(json).length;
+            for (var i = 0; i < length; i++) {
             let art = document.createElement('article');
             art.classList.add('prod-row')
             art.setAttribute('id', json[i].itemId);
@@ -35,8 +37,10 @@ function init(){
             </div>`
             art.innerHTML = prod_row_contents;
             container.append(art);
+            // container.getElementsByClassName('buy-btn')[i].addEventListener('click'),addToCartClicked) 
+            cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+
         }
-        
     })
     .catch((err)=>{
         console.log( err.message );
