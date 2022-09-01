@@ -15,7 +15,6 @@ import java.util.Optional;
 @CrossOrigin("*")
 public class ItemController {
     private final ItemService itemService;
-
     @Autowired
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
@@ -43,7 +42,6 @@ public class ItemController {
         }
         return updatedItem.orElse(null);
     }
-
     @GetMapping("/getItem")
     public @ResponseBody StoreItem getItem(@RequestBody int itemId) {
 

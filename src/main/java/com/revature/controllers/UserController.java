@@ -35,6 +35,10 @@ public class UserController {
         return user.orElse(null);
     }
 
+    @PostMapping("/addItemHistory")
+    public void addItemHHistory(){
+
+    }
     @ExceptionHandler({UserDoesNotExistException.class, NestedServletException.class})
     public ResponseEntity<String> UserDoesNotExistHandler(UserDoesNotExistException ex){
         logger.log(Level.INFO,"Username is not registered");
