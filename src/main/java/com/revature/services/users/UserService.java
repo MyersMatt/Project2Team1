@@ -1,5 +1,6 @@
 package com.revature.services.users;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,7 @@ public class UserService extends GuestService {
             if(i.getUsername().equals(u.getUsername())) return Optional.of(i);
         throw new UserDoesNotExistException();
     }
-	
+
+    public void addItemHistory(LinkedHashMap<Integer, Integer> items) {
+    }
 }

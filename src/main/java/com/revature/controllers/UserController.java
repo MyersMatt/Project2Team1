@@ -9,6 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.NestedServletException;
+
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,8 +39,8 @@ public class UserController {
     }
 
     @PostMapping("/addItemHistory")
-    public void addItemHHistory(){
-
+    public void addItemHistory(@RequestBody LinkedHashMap<Integer, Integer>items){
+        userService.addItemHistory(items);
     }
     @ExceptionHandler({UserDoesNotExistException.class, NestedServletException.class})
     public ResponseEntity<String> UserDoesNotExistHandler(UserDoesNotExistException ex){
