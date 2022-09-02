@@ -140,6 +140,7 @@ function init() {
 
     container = document.getElementById('prod-list');
 
+    //here's the fetch for our store-items
     fetch(req)
     .then((response)=>{
         if(response.ok){
@@ -149,12 +150,12 @@ function init() {
         }
     })
     .then((json)=>{
-        const length = Object.keys(json).length;
+        const length = Object.keys(json).length;        //will pull all objects from the database
             for (var i = 0; i < length; i++) {
             let art = document.createElement('article');
-            art.classList.add('prod-row')
+            art.classList.add('prod-row')               //each prod-row is a html <article>
             art.setAttribute('id', json[i].itemId);
-            let prod_row_contents =`            
+            let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
             <div class="prod-text">
                 <h2 class="prod-title">${json[i].itemName}</h2>
@@ -238,15 +239,7 @@ function addItemToCart(pid, title, price, imageSrc) {        //receives prod-ite
         }
     }
     var cartRowContents = `
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div class="cart-item cart-column bought-item" id="${pid}">
-=======
-    <div class="cart-item cart-column" id="${pid}">
->>>>>>> cc59df9 (decomposing Purchase function; intermediate save)
-=======
-    <div class="cart-item cart-column bought-item" id="${pid}">
->>>>>>> f28350d (accessed prod-id)
         <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
         <span class="cart-item-title">${title}</span>
     </div>
