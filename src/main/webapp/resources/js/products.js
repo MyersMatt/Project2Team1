@@ -1,3 +1,9 @@
+//Dynamic Display Products List
+
+let uri = 'http://localhost:8080/Project2/api/items/getAllItems';
+let req = new Request(uri, {method: 'GET'});
+let container;
+
 
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
@@ -6,6 +12,46 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {  
+
+    container = document.getElementById('prod-list');
+
+    fetch(req)
+    .then((response)=>{
+        if(response.ok){
+            return response.json();
+        }else{
+            throw new Error('BAD HTTP');
+        }
+    })
+    .then((json)=>{
+        const length = Object.keys(json).length;
+            for (var i = 0; i < length; i++) {
+            let art = document.createElement('article');
+            art.classList.add('prod-row')
+            art.setAttribute('id', json[i].itemId);
+            let prod_row_contents =`            
+            <img class="prod-image" src="${json[i].imageUrl}" alt="image">
+            <div class="prod-text">
+                <h2 class="prod-title">${json[i].itemName}</h2>
+                <p class="prod-desc">${json[i].description}</p>
+            </div>
+            <div class="prod-numb">
+                <p class="prod-price">${json[i].itemPrice}</p>
+                <p class="prod-quantity"><strong>${json[i].itemQuantity}</strong><br><em>in stock</em></p>
+                <button class="buy-btn">Purchase</button>
+            </div>`
+            art.innerHTML = prod_row_contents;
+            container.append(art);
+        }
+        const addToCartButtons = document.getElementsByClassName('buy-btn');
+        for (var i = 0; i < addToCartButtons.length; i++) {
+            var button = addToCartButtons[i]
+            button.addEventListener('click', addToCartClicked)
+        }
+    })
+    .catch((err)=>{
+        console.log( err.message );
+    })
 
     let removeCartItemButtons = document.getElementsByClassName('btn-danger');
     for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -19,53 +65,7 @@ function ready() {
         input.addEventListener('change', quantityChanged)
     }
 
-    var addToCartButtons = document.getElementsByClassName('buy-btn')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i]
-        button.addEventListener('click', addToCartClicked)
-    }
-
-    // var addToCartButtons = document.querySelector('buy-btn');
-    // var 
-
-
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
-
-
-
 }
-
-
-
-
-
-function purchaseClicked() {
-
-    //is user registered or a guest:  check
-
-        //if registered, create order history
-
-
-        //if not, do something else (or not)
-
-
-    //need to update item quantity in item
-
-
-    //alerting about the purchase
-    alert("Thank you for your purchase")
-
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-
-    //removing the items 
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-    }
-    updateCartTotal()   //makes total zero
-}
-
-
-
 
 
 function removeCartItem(event) {
@@ -85,8 +85,9 @@ function quantityChanged(event) {
 
 
 function addToCartClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
+    console.log('button clicked')
+    var button = event.target       //target button is buy-btn
+    var shopItem = button.parentElement.parentElement       //parent's parent = article with class prod-row
     var title = shopItem.getElementsByClassName('prod-title')[0].innerText
     var price = shopItem.getElementsByClassName('prod-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('prod-image')[0].src
@@ -138,4 +139,30 @@ function updateCartTotal() {
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+
+
+function purchaseClicked() {
+
+    //is user registered or a guest:  check
+
+        //if registered, create order history
+
+
+        //if not, do something else (or not)
+
+
+    //need to update item quantity in item
+
+
+    //alerting about the purchase
+    alert("Thank you for your purchase")
+
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+
+    //removing the items 
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)
+    }
+    updateCartTotal()   //makes total zero
 }
