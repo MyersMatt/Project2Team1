@@ -38,7 +38,7 @@ public class UserController {
         return user.orElse(null);
     }
 
-    @GetMapping("/getUserById")
+    @PostMapping("/getUserById")
     public @ResponseBody User getUserByID(@RequestBody Integer i) {
         Optional<User> user = userService.getById(i);
         return user.orElse(null);

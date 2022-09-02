@@ -31,13 +31,15 @@ async function doTheFetch (form_info, _api) {
 
     let response = await fetch("http://localhost:8080/Project2/api/authentication/"+_api, requestOptions)
     let data = await response.json()
+	 console.log(response.status)
+    if (response.status == 200) {
+        //setFormMessage(loginForm, "error", "Invalid username/password combination");
+      //setFormMessage(loginForm, "sucess", "Login was Sucessful");
+      localStorage.setItem('user_id', data.id)
+      window.location.replace('products')
+      window.location.reload() 
+      
 
-    if (!response.status == 403) {
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
-    }   else {
-        const firstName = data.firstName;
-        const lastName = data.lastName;
-        console.log(`Success!  Your login of ${firstName} ${lastName} was successful`);
     }
 }
 
