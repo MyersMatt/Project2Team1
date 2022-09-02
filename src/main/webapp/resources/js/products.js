@@ -115,7 +115,7 @@ function addItemToCart(pid, title, price, imageSrc) {        //receives prod-ite
         }
     }
     var cartRowContents = `
-    <div class="cart-item cart-column" id="${pid}">
+    <div class="cart-item cart-column bought-item" id="${pid}">
         <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
         <span class="cart-item-title">${title}</span>
     </div>
@@ -167,11 +167,11 @@ function purchaseClicked() {
 
 //////// original content ///////////
     var itemsPurchased = [];
-    var cartItem = document.getElementsByClassName('cart-row')
-    for (var i = 1; i < cartItem.length; i++) {
-        console.log(cartItem.getAttribute('id')[i])
+    var boughtItems = document.getElementsByClassName('bought-item')
+    for (var i = 0; i < boughtItems.length; i++) {
+        console.log(boughtItems[i].getAttribute('id'))
     }
-    var numItems = cartItem.length
+    // var numItems = cartItem.length
     // //removing the items 
     // while (cartItems.hasChildNodes()) {
     //     cartItems.removeChild(cartItems.firstChild)
