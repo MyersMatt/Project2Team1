@@ -12,11 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/addItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/deleteItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/getItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/getItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/updateItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/items/components/updateItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/Equip_ment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/equip_ment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/users/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/users/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,27 +67,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/matt/IdeaProjects/Project2",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.deploy.options",
-    "spring.configuration.checksum": "ed32d107e69aa6b4989d8d52017bbcdd"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/matt/IdeaProjects/Project2&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.deploy.options&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ed32d107e69aa6b4989d8d52017bbcdd&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
@@ -257,6 +254,8 @@
       <workItem from="1661781604559" duration="12296000" />
       <workItem from="1661867830095" duration="18241000" />
       <workItem from="1661956312844" duration="12890000" />
+      <workItem from="1662126291577" duration="583000" />
+      <workItem from="1662126985528" duration="1978000" />
     </task>
     <servers />
   </component>

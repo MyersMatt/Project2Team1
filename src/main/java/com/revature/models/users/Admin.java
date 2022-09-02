@@ -11,7 +11,7 @@ public class Admin {
     private Integer adminId;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "username",nullable = false)
+    @JoinColumn(name = "username", nullable = false)
     private User user;
 
     public Admin() {

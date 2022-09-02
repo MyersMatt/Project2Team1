@@ -16,9 +16,9 @@ public class StoreItem {
     private double itemPrice;
     @Column(name = "item_quantity", nullable = false)
     private int itemQuantity;
-    @Column(name = "description",nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
-    @Column(name = "image_url",nullable = false)
+    @Column(name = "image_url", nullable = false)
     private String imageUrl;
 
     public StoreItem() {
