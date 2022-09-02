@@ -37,7 +37,11 @@ public class UserController {
         Optional<User> user  = userService.update(u);
         return user.orElse(null);
     }
-
+    @GetMapping("/getUserById")
+    public @ResponseBody User getUserByID(@RequestBody Integer i){
+        Optional<User> user = userService.getById(i);
+        return user.orElse(null);
+    }
     @PostMapping("/addItemHistory")
     public void addItemHistory(@RequestBody LinkedHashMap<Integer, Integer>items){
         userService.addItemHistory(items);

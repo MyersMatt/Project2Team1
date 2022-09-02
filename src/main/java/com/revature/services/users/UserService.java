@@ -2,7 +2,10 @@ package com.revature.services.users;
 
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+
+import com.revature.exceptions.UserAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +32,13 @@ public class UserService extends GuestService {
     }
 
     public void addItemHistory(LinkedHashMap<Integer, Integer> items) {
+    }
+
+    public Optional<User> getById(Integer i) throws UserDoesNotExistException{
+        List<User> users = userDao.read();
+        for(User u: users){
+            if(Objects.equals(u.getId(), i)) return Optional.of(u);
+        }
+        throw new UserAlreadyExistsException();
     }
 }
