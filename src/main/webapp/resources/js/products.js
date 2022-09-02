@@ -198,7 +198,11 @@ function addItemToCart(pid, title, price, imageSrc) {        //receives prod-ite
         }
     }
     var cartRowContents = `
+<<<<<<< HEAD
     <div class="cart-item cart-column bought-item" id="${pid}">
+=======
+    <div class="cart-item cart-column" id="${pid}">
+>>>>>>> cc59df9 (decomposing Purchase function; intermediate save)
         <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
         <span class="cart-item-title">${title}</span>
     </div>
