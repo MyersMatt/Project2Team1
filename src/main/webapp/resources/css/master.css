@@ -76,7 +76,6 @@ nav a:hover {
     width: 600px;
 }
 
-
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
