@@ -1,20 +1,23 @@
 //Dynamic Display Products List
 
+//set variables needed for GET fetchAPI
 let uri = 'http://localhost:8080/Project2/api/items/getAllItems';
 let req = new Request(uri, {method: 'GET'});
 let container;
 
-
+//make sure products.html page is ready to be modified
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
+    document.addEventListener('DOMContentLoaded', init)
 } else {
-    ready()
+    init()
 }
 
-function ready() {  
+//initialization functions to setup products page
+function init() {  
 
     container = document.getElementById('prod-list');
 
+    //here's the fetch for our store-items
     fetch(req)
     .then((response)=>{
         if(response.ok){
@@ -24,12 +27,12 @@ function ready() {
         }
     })
     .then((json)=>{
-        const length = Object.keys(json).length;
+        const length = Object.keys(json).length;        //will pull all objects from the database
             for (var i = 0; i < length; i++) {
             let art = document.createElement('article');
-            art.classList.add('prod-row')
+            art.classList.add('prod-row')               //each prod-row is a html <article>
             art.setAttribute('id', json[i].itemId);
-            let prod_row_contents =`            
+            let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
             <div class="prod-text">
                 <h2 class="prod-title">${json[i].itemName}</h2>
