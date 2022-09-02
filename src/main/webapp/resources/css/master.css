@@ -21,6 +21,7 @@ nav {
     text-decoration: none;
     
 }
+
 nav a {
     display: block;
     color: var(--color-primary);
@@ -39,10 +40,11 @@ body {
 
 header {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 px;
     border-bottom: 1px solid #bbc7c7;
     color: var(--color-primary);
 }
+
 .title-row {
     max-width: 1200px;
     margin: 40px auto;
@@ -50,6 +52,7 @@ header {
     font-size: 1.15rem;
     color: var(--color-primary);
 }
+
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -57,11 +60,6 @@ header {
     max-width: 1200px;
     margin: 20px auto;
 }
-
-/* article {
-    height: 500px;
-    width: 300px;
-} */
 
 section.featured {
     grid-column: span 3;
