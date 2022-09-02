@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import com.revature.exceptions.UserDoesNotExistException;
+import com.revature.models.items.StoreItem;
 import com.revature.models.users.User;
 import com.revature.services.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,11 @@ public class UserController {
     @PostMapping("/addItemHistory")
     public void addItemHistory(@RequestBody LinkedHashMap<Integer, Integer> items) {
         userService.addItemHistory(items);
+    }
+
+    @GetMapping("/getItemHistory")
+    public @ResponseBody LinkedHashMap<StoreItem, Integer> getItemHistory(@RequestBody Integer id){
+        return userService.getItemHistory(id);
     }
 
     @ExceptionHandler({UserDoesNotExistException.class, NestedServletException.class})

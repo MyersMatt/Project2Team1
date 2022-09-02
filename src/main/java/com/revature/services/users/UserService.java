@@ -3,6 +3,7 @@ package com.revature.services.users;
 import com.revature.dao.UserDao;
 import com.revature.exceptions.UserAlreadyExistsException;
 import com.revature.exceptions.UserDoesNotExistException;
+import com.revature.models.items.StoreItem;
 import com.revature.models.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,7 @@ public class UserService extends GuestService {
     }
 
     public void addItemHistory(LinkedHashMap<Integer, Integer> items) {
+
     }
 
     public Optional<User> getById(Integer i) throws UserDoesNotExistException {
@@ -39,5 +41,9 @@ public class UserService extends GuestService {
             if (Objects.equals(u.getId(), i)) return Optional.of(u);
         }
         throw new UserAlreadyExistsException();
+    }
+
+    public LinkedHashMap<StoreItem, Integer> getItemHistory(Integer id) {
+        return new LinkedHashMap<>();
     }
 }
