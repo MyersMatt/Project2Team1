@@ -31,7 +31,6 @@ function init() {
             for (var i = 0; i < length; i++) {
             let art = document.createElement('article');
             art.classList.add('prod-row')               //each prod-row is a html <article>
-<<<<<<< HEAD
             art.setAttribute('id', json[i].itemId);     //'prod-id-'+  <-- place before json[i]
             let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
@@ -74,9 +73,6 @@ function init() {
             let art = document.createElement('article');
             art.classList.add('prod-row')               //each prod-row is a html <article>
             art.setAttribute('id', json[i].itemId);
-=======
-            art.setAttribute('id', 'prod-id-'+json[i].itemId);
->>>>>>> 6b17a76 (decomposing Purchase function; intermediate save)
             let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
             <div class="prod-text">
@@ -161,11 +157,7 @@ function addItemToCart(pid, title, price, imageSrc) {        //receives prod-ite
         }
     }
     var cartRowContents = `
-<<<<<<< HEAD
     <div class="cart-item cart-column bought-item" id="${pid}">
-=======
-    <div class="cart-item cart-column" id="${pid}">
->>>>>>> 6b17a76 (decomposing Purchase function; intermediate save)
         <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
         <span class="cart-item-title">${title}</span>
     </div>
