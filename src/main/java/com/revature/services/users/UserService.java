@@ -40,7 +40,7 @@ public class UserService extends GuestService {
         for (User u : users) {
             if (Objects.equals(u.getId(), i)) return Optional.of(u);
         }
-        throw new UserAlreadyExistsException();
+        throw new UserDoesNotExistException();
     }
 
     public LinkedHashMap<StoreItem, Integer> getItemHistory(Integer id) {
