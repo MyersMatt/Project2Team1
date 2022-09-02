@@ -32,7 +32,6 @@ function init() {
             let art = document.createElement('article');
             art.classList.add('prod-row')               //each prod-row is a html <article>
             art.setAttribute('id', json[i].itemId);     //'prod-id-'+  <-- place before json[i]
-<<<<<<< HEAD
             let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
             <div class="prod-text">
@@ -156,8 +155,6 @@ function init() {
             let art = document.createElement('article');
             art.classList.add('prod-row')               //each prod-row is a html <article>
             art.setAttribute('id', json[i].itemId);
-=======
->>>>>>> 09ffc1a (created itemsPurchased array)
             let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
             <div class="prod-text">
