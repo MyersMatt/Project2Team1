@@ -9,18 +9,37 @@ let paymentInfo = document.getElementById("paymentInfo")
 
 let userInformation;
 
-document.onload = async function getUserInfo() {
+window.onload = async function getUserInfo() {
 localStorage.setItem('user_id',1)	
-let req = await fetch("http://localhost:8080/Project2/api/user/getUserById/",localStorage.getItem("user_id"))
+let myHeaders = new Headers()
+myHeaders.append("Content-Type", "application/json")
+let raw = JSON.stringify(localStorage.getItem('user_id'))
+let requestOptions = {
+	
+	method: 'POST',
+	headers: myHeaders,
+	body: raw,
+	redirect: 'follow'
+}
+let req = await fetch("http://localhost:8080/Project2/api/user/getUserById/", requestOptions)
 userInformation = await req.json()
-username.value = userInformation.get('username')
-password.value = userInformation.get('password')
-email.value = userInformation.get('email')
-labName.value = userInformation.get('labName')
-contactName.value = userInformation.get('contactName')
-shippingAddress.value = userInformation.get('shippingAddress')
-paymentInfo.value = userInformation.get('paymentInfo')
+console.log(userInformation)
+username.value = userInformation.username
+password.value = userInformation.password
+email.value = userInformation.email
+labName.value = userInformation.labName
+contactName.value = userInformation.contactName
+if(userInformation.shippingAddress == null){
+	shippingAddress.value = "123 Example Street"
+}else{
+	shippingAddress.value = userInformation.shippingAddress
+}
 
+if(userInformation.paymentInfo == null){
+	paymentInfo.value = "1111-1111-1111"
+}else{
+	paymentInfo.value = userInformation.paymentInfo
+}
 	
 }
 async function getData(e){
@@ -31,17 +50,17 @@ async function getData(e){
 
     let passwordRepeat = document.getElementById("psw-repeat").value
 
-    if (password == passwordRepeat){
+    if (password.value == passwordRepeat){
 
     updateReqObj = {
-        id,
-        username,
-        password,
-        email,
-        labName,
-        contactName,
-        shippingAddress,
-        paymentInfo
+        id : localStorage.getItem('user_id'),
+        username: username.value,
+        password: password.value,
+        email: email.value,
+        labName: labName.value,
+        contactName: contactName.value,
+        shippingAddress: shippingAddress.value,
+        paymentInfo: paymentInfo.value
 
     }
 
