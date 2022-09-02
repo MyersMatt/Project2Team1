@@ -31,7 +31,7 @@ function init() {
             for (var i = 0; i < length; i++) {
             let art = document.createElement('article');
             art.classList.add('prod-row')               //each prod-row is a html <article>
-            art.setAttribute('id', 'prod-id-'+json[i].itemId);
+            art.setAttribute('id', json[i].itemId);     //'prod-id-'+  <-- place before json[i]
             let prod_row_contents =`                    
             <img class="prod-image" src="${json[i].imageUrl}" alt="image">
             <div class="prod-text">
@@ -156,22 +156,20 @@ function purchaseClicked() {
         //if not, do something else (or not)
     //need to update item quantity in item
     //alerting about the purchase
-    // var itemsPurchased = [];
-    // var Items = document.getElementsByClassName('cart-items')[3]
-    // console.log(Items)
 
-    // var cartItem_ids, cartItem_qty
-    // for (var i = 0; i < cartItems.length; i++) {
-
-    // }
-
-//////// original content ///////////
     var itemsPurchased = [];
-    var boughtItems = document.getElementsByClassName('bought-item')
-    for (var i = 0; i < boughtItems.length; i++) {
-        console.log(boughtItems[i].getAttribute('id'))
-    }
-    // var numItems = cartItem.length
+    var boughtItem = document.getElementsByClassName('bought-item')
+    var boughtItemQty = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < boughtItem.length; i++) {
+        let buy_item_id = (boughtItem[i].getAttribute('id'))
+        let buy_item_qty = boughtItemQty[i].value
+        // let itemPurchased[] = {buy_item_id: buy_item_qty}
+        itemsPurchased[buy_item_id] = buy_item_qty
+        }
+    
+    console.log(itemsPurchased)
+
+    //////// original content ///////////
     // //removing the items 
     // while (cartItems.hasChildNodes()) {
     //     cartItems.removeChild(cartItems.firstChild)
