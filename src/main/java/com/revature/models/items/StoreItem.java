@@ -72,4 +72,16 @@ public class StoreItem {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    @Override
+    public String toString() {
+        return "StoreItem{" +
+                "itemId=" + itemId +
+                ", itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                ", itemQuantity=" + itemQuantity +
+                ", description='" + description + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
+    }
 }
