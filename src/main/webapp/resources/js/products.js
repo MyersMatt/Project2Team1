@@ -275,13 +275,20 @@ function updateCartTotal() {
 
 function purchaseClicked() {
 
+    let isUserSignin = localStorage.getItem('user_id')
+
     var itemsPurchased = [];                                                        //declares the order history array
     var boughtItem = document.getElementsByClassName('bought-item')                 //item number
     var boughtItemQty = document.getElementsByClassName('cart-quantity-input')      //quantity bought
     for (var i = 0; i < boughtItem.length; i++) {
         itemsPurchased[boughtItem[i].getAttribute('id')] = boughtItemQty[i].value   //loads values into the order history array
         }
-    console.log(itemsPurchased)
+    // console.log(itemsPurchased)
+
+        if (isUserSignin !== null) {
+        // console.log(isUserSignin);
+    }
+
 
         //////// original content ///////////
     var cartItems = document.getElementsByClassName('cart-items')[0]
