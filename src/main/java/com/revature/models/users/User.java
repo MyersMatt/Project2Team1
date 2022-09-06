@@ -30,11 +30,14 @@ public class User extends AnonymousUser {
     @Column(name = "contact_name", nullable = false)
     private String contactName;
 
+    @Column(name = "is_manager", nullable = false )
+    private Boolean isManager = false;
     @Column(name = "shipping_address")
     private String shippingAddress;
 
     @Column(name = "payment_info")
     private String paymentInfo;
+
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<OrderList> history;
