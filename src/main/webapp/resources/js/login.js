@@ -80,9 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ev.preventDefault();
         let form_info = new FormData(ev.target);
         doTheFetch(form_info, 'login');
+        window.location.href="products.html";
+
 //      setFormMessage(loginForm, "error", "Invalid username/password combination");
         // console.log(`Yep... back where we started with ${firstName}`);
         loginForm.reset();
+        
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
