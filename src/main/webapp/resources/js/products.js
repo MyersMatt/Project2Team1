@@ -83,6 +83,7 @@ function removeCartItem(event) {
 
 function quantityChanged(event) {
     var input = event.target
+    // let pRow = input.parentElement.parentElement.
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
