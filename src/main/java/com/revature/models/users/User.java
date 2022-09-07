@@ -1,14 +1,10 @@
 package com.revature.models.users;
 
-import com.revature.models.items.OrderList;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = {"username", "email"}))
-public class User extends AnonymousUser {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,14 +33,6 @@ public class User extends AnonymousUser {
 
     @Column(name = "payment_info")
     private String paymentInfo;
-
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<OrderList> history;
-
-    public User() {
-        history = new ArrayList<>();
-    }
 
     public Integer getId() {
         return id;
@@ -110,14 +98,6 @@ public class User extends AnonymousUser {
         this.paymentInfo = paymentInfo;
     }
 
-    public List<OrderList> getHistory() {
-        return history;
-    }
-
-    public void setHistory(List<OrderList> history) {
-        this.history = history;
-    }
-
     public Boolean getAdmin() {
         return isAdmin;
     }
@@ -137,7 +117,6 @@ public class User extends AnonymousUser {
                 ", contactName='" + contactName + '\'' +
                 ", shippingAddress='" + shippingAddress + '\'' +
                 ", paymentInfo='" + paymentInfo + '\'' +
-                ", history=" + history +
                 '}';
     }
 }
