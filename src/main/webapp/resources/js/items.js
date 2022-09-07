@@ -39,10 +39,10 @@ addButton.addEventListener("click", async () => {
             let payload = convert2JSON(form_info);
             console.log(payload);
             const addAPI = "/add";
-            var myHeaders = new Headers();
+            let myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
         
-            var requestOptions = {
+            let requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
                 body: payload,
@@ -53,12 +53,6 @@ addButton.addEventListener("click", async () => {
             let data = await response.json()
 
         })
-
-        // newButton = document.getElementById("submit-add-item-button");
-        // newButton.addEventListener("click", async () => {
-        // })
-        // console.log("Add API: " + );
-
     }
 );
 

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 @Controller
 @RequestMapping("/items")
-//@CrossOrigin("*")
+@CrossOrigin("*")
 public class ItemController {
     private final ItemService itemService;
     private static final Logger logger = Logger.getLogger(ItemController.class.getName());

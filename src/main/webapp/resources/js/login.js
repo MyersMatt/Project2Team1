@@ -36,7 +36,7 @@ async function doTheFetch (form_info, _api) {
         //setFormMessage(loginForm, "error", "Invalid username/password combination");
       //setFormMessage(loginForm, "sucess", "Login was Sucessful");
       localStorage.setItem('user_id', data.id)
-      window.location.replace('products')
+      window.location.replace('products.html')
       window.location.reload() 
       
 
@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ev.preventDefault();
         let form_info = new FormData(ev.target);
         doTheFetch(form_info, 'register');
+        // window.location.href="products.html";
+
         createAccountForm.reset();
 
     });
