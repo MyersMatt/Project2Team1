@@ -149,12 +149,13 @@ purchase = async (e) =>{
 
     if (userId !== null) {
         // console.log(isUserSignin);
-        await fetch(url+"/addToHistory", {
+        await fetch("localhost:8080/Project2/api/OrderHistory/AddHistory", {
             method:"POST",
             headers: myHeaders,
             body: raw,
             redirect: 'follow'
-        })
+        }).then(response => console.log("History Added to database"))
+            .catch(error => console.log("error",error))
     }
 
 
