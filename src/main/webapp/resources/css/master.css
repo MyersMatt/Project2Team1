@@ -52,6 +52,11 @@ nav a {
     text-decoration: none;
 }
 
+
+#admin-options{
+    display: none;
+}
+
 nav a:hover {
     color: black
     /* text-shadow: 1px 1px 2px black; */

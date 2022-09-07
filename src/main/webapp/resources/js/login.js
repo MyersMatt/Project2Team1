@@ -34,8 +34,7 @@ async function doTheFetch (form_info, _api) {
 	// console.log(response.status)
     if (response.status == 200) {
         localStorage.setItem('user_id', data.id)
-        // window.location.href="products.html";
-        // window.location.reload();
+        localStorage.setItem('is_admin', data.admin)
     }
 }
 
@@ -102,15 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target.id === "signupEmail" && e.target.value.length > 0 && e.target.value.length < 3) {
                 setInputError(inputElement, "Email must be filled out.");
             }
-            // if (e.target.id === "signupEmail" && e.target.value.length > 0 && eRGEX.test(e.target.value)) {   //Regex:   [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}
-            //     setInputError(inputElement, "Invalid email address");
-            // }
-            // if ((e.target.id === "signupPassword" && e.target.value.length > 0) && (e.target.id === "signupPassword_confirm" && e.target.value.length > 0))  {
-                // if (p1 !== p2) {
-            // if (e.target.)
-            //         setInputError(inputElement, "well somebody has to enter something");
-            //     // }
-            // }         
         });
 
         inputElement.addEventListener("input", e => {
