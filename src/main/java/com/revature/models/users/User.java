@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = {"username", "email"}))
-public class User extends AnonymousUser {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,13 +40,13 @@ public class User extends AnonymousUser {
     private String paymentInfo;
 
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<OrderList> history;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JsonIgnore
+//    private List<OrderList> history;
 
-    public User() {
-        history = new ArrayList<>();
-    }
+//    public User() {
+//        history = new ArrayList<>();
+//    }
 
     public Integer getId() {
         return id;
@@ -112,13 +112,13 @@ public class User extends AnonymousUser {
         this.paymentInfo = paymentInfo;
     }
 
-    public List<OrderList> getHistory() {
-        return history;
-    }
-
-    public void setHistory(List<OrderList> history) {
-        this.history = history;
-    }
+//    public List<OrderList> getHistory() {
+//        return history;
+//    }
+//
+//    public void setHistory(List<OrderList> history) {
+//        this.history = history;
+//    }
 
     public Boolean getAdmin() {
         return isAdmin;
@@ -139,7 +139,7 @@ public class User extends AnonymousUser {
                 ", contactName='" + contactName + '\'' +
                 ", shippingAddress='" + shippingAddress + '\'' +
                 ", paymentInfo='" + paymentInfo + '\'' +
-                ", history=" + history +
+//                ", history=" + history +
                 '}';
     }
 }

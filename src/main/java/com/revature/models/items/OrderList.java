@@ -15,7 +15,7 @@ public class OrderList {
     @Column(name = "order_id")
     private Integer orderId;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "list_item_junction",
             joinColumns = {@JoinColumn(name = "order_id")},
@@ -23,7 +23,7 @@ public class OrderList {
     )
     private List<StoreItem> orderList;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;
