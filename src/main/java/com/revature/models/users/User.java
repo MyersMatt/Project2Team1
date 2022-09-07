@@ -1,11 +1,6 @@
 package com.revature.models.users;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.revature.models.items.OrderList;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = {"username", "email"}))
@@ -38,15 +33,6 @@ public class User {
 
     @Column(name = "payment_info")
     private String paymentInfo;
-
-
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JsonIgnore
-//    private List<OrderList> history;
-
-//    public User() {
-//        history = new ArrayList<>();
-//    }
 
     public Integer getId() {
         return id;
@@ -112,14 +98,6 @@ public class User {
         this.paymentInfo = paymentInfo;
     }
 
-//    public List<OrderList> getHistory() {
-//        return history;
-//    }
-//
-//    public void setHistory(List<OrderList> history) {
-//        this.history = history;
-//    }
-
     public Boolean getAdmin() {
         return isAdmin;
     }
@@ -139,7 +117,6 @@ public class User {
                 ", contactName='" + contactName + '\'' +
                 ", shippingAddress='" + shippingAddress + '\'' +
                 ", paymentInfo='" + paymentInfo + '\'' +
-//                ", history=" + history +
                 '}';
     }
 }
