@@ -31,15 +31,12 @@ async function doTheFetch (form_info, _api) {
 
     let response = await fetch("http://localhost:8080/Project2/api/authentication/"+_api, requestOptions)
     let data = await response.json()
-	 console.log(response.status)
+	// console.log(response.status)
     if (response.status == 200) {
-        //setFormMessage(loginForm, "error", "Invalid username/password combination");
-      //setFormMessage(loginForm, "sucess", "Login was Sucessful");
-      localStorage.setItem('user_id', data.id)
-      window.location.replace('products.html')
-      window.location.reload() 
-      
-
+        //setFormMessage(loginForm, "sucess", "Login was Sucessful");
+        localStorage.setItem('user_id', data.id)
+        window.location.replace('products.html')
+        window.location.reload() 
     }
 }
 
@@ -71,10 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
     createAccountForm.addEventListener("submit", ev => {
         ev.preventDefault();
         let form_info = new FormData(ev.target);
-        doTheFetch(form_info, 'register');
+        let p1 = document.querySelector('#signupPassword').value;
+        let p2 = document.querySelector('#signupPassword_confirm').value;
+        if (p1 !== p2) {
+            console.log("They not equal")
+            setFormMessage(createAccountForm, "error", "Passwords do not match!");
+        }
+            console.log("They equal; DO THE FETCH!");
+            // doTheFetch(form_info, 'register');
+            // createAccountForm.reset();       //uncomment this
+        
         // window.location.href="products.html";
 
-        createAccountForm.reset();
 
     });
 
@@ -84,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         doTheFetch(form_info, 'login');
         window.location.href="products.html";
 
-//      setFormMessage(loginForm, "error", "Invalid username/password combination");
+        // setFormMessage(loginForm, "error", "Invalid username/password combination");
         // console.log(`Yep... back where we started with ${firstName}`);
         loginForm.reset();
         
@@ -92,25 +97,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
+
             if (e.target.id === "signupPassword" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Password must be at least 8 characters in length");
             }
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Username must be at least 8 characters in length");
             }
-            if (e.target.id === "signupEmail" && e.target.value.length > 0 && e.target.value.length < 1) {
+            if (e.target.id === "signupEmail" && e.target.value.length > 0 && e.target.value.length < 3) {
                 setInputError(inputElement, "Email must be filled out.");
             }
             // if (e.target.id === "signupEmail" && e.target.value.length > 0 && eRGEX.test(e.target.value)) {   //Regex:   [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}
             //     setInputError(inputElement, "Invalid email address");
             // }
-            // if (e.target.id === "signupFirstname" && e.target.value.length > 0 && e.target.value.length < 1) {
-            //     setInputError(inputElement, "First name must be filled out.");
-            // }
-            // if (e.target.id === "signupLastname" && e.target.value.length > 0 && e.target.value.length < 1) {
-            //     setInputError(inputElement, "Last name must be filled out.");
-            // }
-            
+            // if ((e.target.id === "signupPassword" && e.target.value.length > 0) && (e.target.id === "signupPassword_confirm" && e.target.value.length > 0))  {
+                // if (p1 !== p2) {
+            // if (e.target.)
+            //         setInputError(inputElement, "well somebody has to enter something");
+            //     // }
+            // }         
         });
 
         inputElement.addEventListener("input", e => {
