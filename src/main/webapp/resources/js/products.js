@@ -1,6 +1,9 @@
 //Dynamic Display Products List
 
 let url = "http://localhost:8080/Project2/api/items";
+let itemsPurchased = {}
+let userId
+
 window.onload = async function init(){
     let req = new Request(url+"/getAllItems", {method: 'GET'});
     let container = document.getElementById("prod-list");
@@ -29,9 +32,8 @@ window.onload = async function init(){
             for (let i = 0; i < addToCartButtons.length; i++) {
             let button = addToCartButtons[i]
             button.addEventListener('click', addToCartClicked)
+            }
         }
-        }
-
     }).catch((error)=>{
         console.log(error)
         }
@@ -123,11 +125,23 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
-
-purchase = async (e) =>{
+async function addToHistory(){
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    console.log(userId);
+    itemsPurchased["userId"] = userId;
+    let raw = JSON.stringify(itemsPurchased);
+    return fetch("localhost:8080/Project2/api/OrderHistory/AddHistory", {
+        method:"POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    }).then(() => console.log("History Added to database"))
+        .catch(error => console.log("error",error))
+}
+let purchase = async (e) =>{
     e.preventDefault();
-    let userId= localStorage.getItem('user_id')
-    let itemsPurchased = {}
+    userId = localStorage.getItem('user_id')
     let boughtItem = document.getElementsByClassName("bought-item")
     let boughtItemQty = document.getElementsByClassName("cart-quantity-input")
     for (let i = 0; i<boughtItem.length; ++i) itemsPurchased[boughtItem[i].getAttribute('id')] = boughtItemQty[i].value
@@ -144,19 +158,8 @@ purchase = async (e) =>{
     };
 
     await fetch(url+"/updateBoughtItems", requestOptions)
-        .then(response => console.log("don't reload here"))
+        .then( () => console.log("Successfully purchased items"))
         .catch(error => console.log('error', error));
-
-    if (userId !== null) {
-        // console.log(isUserSignin);
-        await fetch("localhost:8080/Project2/api/OrderHistory/AddHistory", {
-            method:"POST",
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        }).then(response => console.log("History Added to database"))
-            .catch(error => console.log("error",error))
-    }
 
 
     //////// original content ///////////
@@ -168,4 +171,10 @@ purchase = async (e) =>{
 
     alert(`Thank you for your purchase of items`)
     updateCartTotal()
+    if(userId !=null)
+        await addToHistory().then(() => itemsPurchased = {});
+    else
+        itemsPurchased = {}
+
+    location.reload();
 }
