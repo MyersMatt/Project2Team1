@@ -31,7 +31,7 @@ public class User extends AnonymousUser {
     private String contactName;
 
     @Column(name = "is_manager", nullable = false )
-    private Boolean isManager = false;
+    private Boolean isAdmin = false;
     @Column(name = "shipping_address")
     private String shippingAddress;
 
@@ -116,6 +116,14 @@ public class User extends AnonymousUser {
 
     public void setHistory(List<OrderList> history) {
         this.history = history;
+    }
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 
     @Override
