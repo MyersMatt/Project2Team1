@@ -12,8 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/UserDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/exceptions/UserDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +258,7 @@
       <workItem from="1662126985528" duration="1978000" />
       <workItem from="1662557585238" duration="853000" />
       <workItem from="1662559192750" duration="15245000" />
-      <workItem from="1662583555157" duration="393000" />
+      <workItem from="1662583555157" duration="3356000" />
     </task>
     <servers />
   </component>

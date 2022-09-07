@@ -19,10 +19,10 @@ function clearInputError(inputElement) {
 async function doTheFetch (form_info, _api) {
 
     let raw = convert2JSON(form_info);
-    var myHeaders = new Headers();
+    let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var requestOptions = {
+    let requestOptions = {
         method: 'POST',
         headers: myHeaders,
         body: raw,
@@ -33,10 +33,9 @@ async function doTheFetch (form_info, _api) {
     let data = await response.json()
 	// console.log(response.status)
     if (response.status == 200) {
-        //setFormMessage(loginForm, "sucess", "Login was Sucessful");
         localStorage.setItem('user_id', data.id)
-        window.location.replace('products.html')
-        window.location.reload() 
+        // window.location.href="products.html";
+        // window.location.reload();
     }
 }
 
@@ -73,14 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (p1 !== p2) {
             console.log("They not equal")
             setFormMessage(createAccountForm, "error", "Passwords do not match!");
-        }
+            document.getElementById("signupPassword_confirm").focus();
+        }else {
             console.log("They equal; DO THE FETCH!");
-            // doTheFetch(form_info, 'register');
-            // createAccountForm.reset();       //uncomment this
-        
-        // window.location.href="products.html";
-
-
+            doTheFetch(form_info, 'register');
+            window.location.href="products.html";
+            createAccountForm.reset();
+        }
     });
 
     loginForm.addEventListener("submit", ev => {
@@ -88,9 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let form_info = new FormData(ev.target);
         doTheFetch(form_info, 'login');
         window.location.href="products.html";
-
-        // setFormMessage(loginForm, "error", "Invalid username/password combination");
-        // console.log(`Yep... back where we started with ${firstName}`);
         loginForm.reset();
         
     });
