@@ -31,7 +31,10 @@ public class UserService extends GuestService {
         throw new UserDoesNotExistException();
     }
 
-    public void addItemHistory(LinkedHashMap<Integer, Integer> items) {
+    public void addItemHistory(LinkedHashMap<String, String> items) {
+        List<User> users = userDao.read();
+        User user = null;
+        for(User i : users) if(i.getId() == Integer.parseInt(items.get("userId"))){ user = i;}
 
     }
 
