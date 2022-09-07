@@ -15,9 +15,6 @@ public class OrderList {
     @Column(name = "order_id")
     private Integer orderId;
 
-    @Column(name = "list_name")
-    private String listName;
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "list_item_junction",
@@ -35,9 +32,7 @@ public class OrderList {
         this.orderList = new ArrayList<>();
     }
 
-    public OrderList(Integer orderId, String listName, List<StoreItem> orderList, User user) {
-        this.orderId = orderId;
-        this.listName = listName;
+    public OrderList(List<StoreItem> orderList, User user) {
         this.orderList = orderList;
         this.user = user;
     }
@@ -48,14 +43,6 @@ public class OrderList {
 
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
-    }
-
-    public String getListName() {
-        return listName;
-    }
-
-    public void setListName(String listName) {
-        this.listName = listName;
     }
 
     public List<StoreItem> getOrderList() {
@@ -78,7 +65,6 @@ public class OrderList {
     public String toString() {
         return "OrderList{" +
                 "orderId=" + orderId +
-                ", listName='" + listName + '\'' +
                 ", orderList=" + orderList +
                 ", user=" + user +
                 '}';

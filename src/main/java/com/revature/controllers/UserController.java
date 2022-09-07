@@ -44,11 +44,6 @@ public class UserController {
         return user.orElse(null);
     }
 
-    @PostMapping("/addItemHistory")
-    public void addItemHistory(@RequestBody LinkedHashMap<String, String> items) {
-        userService.addItemHistory(items);
-    }
-
     @GetMapping("/getItemHistory")
     public @ResponseBody LinkedHashMap<StoreItem, Integer> getItemHistory(@RequestBody Integer id){
         return userService.getItemHistory(id);

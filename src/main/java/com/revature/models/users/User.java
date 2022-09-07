@@ -1,5 +1,6 @@
 package com.revature.models.users;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.revature.models.items.OrderList;
 
 import javax.persistence.*;
@@ -39,7 +40,8 @@ public class User extends AnonymousUser {
     private String paymentInfo;
 
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<OrderList> history;
 
     public User() {
