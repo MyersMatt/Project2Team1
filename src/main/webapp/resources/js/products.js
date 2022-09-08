@@ -16,17 +16,17 @@ window.onload = async function init(){
     }).then((json)=>{
         const length = Object.keys(json).length;
         for(let i = 0; i < length; ++i){
-             let art = document.createElement("article");
-             art.classList.add("prod-row");
-             art.setAttribute("id", json[i].itemId);
-             art.innerHTML = `
+            let art = document.createElement("article");
+            art.classList.add("prod-row");
+            art.setAttribute("id", json[i].itemId);
+            art.innerHTML = `
                 <img class="prod-image" src="${json[i].imageUrl}" alt="image">
                 <div class="prod-text">
                     <h2 class="prod-title">${json[i].itemName}</h2>
                     <p class="prod-desc">${json[i].description}</p>
                 </div>
                 <div class="prod-numb">
-                    <p class="prod-price">${json[i].itemPrice}</p>
+                    <p class="prod-price">$${json[i].itemPrice}</p>
                     <p class="prod-quantity"><strong>${json[i].itemQuantity}</strong><br><em>in stock</em></p>
                     <button class="buy-btn">Purchase</button>
                 </div>`;
