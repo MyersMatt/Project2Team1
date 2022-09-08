@@ -31,7 +31,7 @@ window.onload = async function init(){
                     <p class="prod-desc">${json[i].description}</p>
                 </div>
                 <div class="prod-numb">
-                    <p class="prod-price4">$${json[i].itemPrice}</p>
+                    <p class="prod-price">$${json[i].itemPrice}</p>
                     <p class="prod-quantity"><strong>${json[i].itemQuantity}</strong><br><em>in stock</em></p>
                     <button class="buy-btn">Purchase</button>
                 </div>`;

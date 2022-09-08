@@ -11,12 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/master.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
