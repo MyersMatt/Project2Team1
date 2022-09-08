@@ -54,7 +54,46 @@ nav a {
 
 
 #admin-options{
-    display: none;
+    display: block;
+    visibility: hidden;
+}
+
+#sign-out-inactive{
+    display: block;
+    visibility: hidden;
+
+}
+#sign-out-active{
+    display: block;
+    visibility: visible;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+}
+
+#account-active{
+    display: block;
+    visibility: visible;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+}
+
+#account-inactive{
+    display: block;
+    visibility: hidden;
+}
+#login-active{
+    display: block;
+    visibility: visible;
+}
+#login-inactive{
+    display: block;
+    visibility: hidden;
 }
 
 nav a:hover {

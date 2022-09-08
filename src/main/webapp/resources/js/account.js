@@ -82,6 +82,8 @@ async function getData(e){
         } catch(e){
             //errorMessage.innerText = "invalid information was received, please try again";
             console.log("A user has failed to update to the system");
+        } finally {
+            location.reload();
         }
     }
     else {

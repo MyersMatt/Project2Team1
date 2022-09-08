@@ -8,6 +8,11 @@ window.onload = async function init(){
 
     userId = localStorage.getItem('user_id')
 
+    if(userId != null){
+        document.getElementById("account-inactive").id = "account-active";
+        document.getElementById("sign-out-inactive").id="sign-out-active";
+        document.getElementById("login-active").id = "login-inactive"
+    }
     let req = new Request(url+"/getAllItems", {method: 'GET'});
     let container = document.getElementById("prod-list");
     await fetch(req).then((response) =>{
@@ -26,7 +31,7 @@ window.onload = async function init(){
                     <p class="prod-desc">${json[i].description}</p>
                 </div>
                 <div class="prod-numb">
-                    <p class="prod-price">$${json[i].itemPrice}</p>
+                    <p class="prod-price4">$${json[i].itemPrice}</p>
                     <p class="prod-quantity"><strong>${json[i].itemQuantity}</strong><br><em>in stock</em></p>
                     <button class="buy-btn">Purchase</button>
                 </div>`;
@@ -54,6 +59,10 @@ window.onload = async function init(){
     }
 }
 
+let signout = () =>{
+    localStorage.clear()
+    // location.reload()
+}
 function removeCartItem(event) {
     let buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
@@ -113,6 +122,7 @@ function addItemToCart(pid, title, price, imageSrc) {        //receives prod-ite
 }
 
 
+
 function updateCartTotal() {
     let cartItemContainer = document.getElementsByClassName('cart-items')[0]
     let cartRows = cartItemContainer.getElementsByClassName('cart-row')
@@ -128,21 +138,6 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
-
-// let addToHistory = async (e) =>{
-//     let myHeaders = new Headers();
-//     myHeaders.append("Content-Type", "application/json");
-//     console.log(userId);
-//     itemsPurchased["userId"] = userId;
-//     let raw = JSON.stringify(itemsPurchased);
-//     return fetch("localhost:8080/Project2/api/OrderHistory/AddHistory", {
-//         method:"POST",
-//         headers: myHeaders,
-//         body: raw,
-//         redirect: 'follow'
-//     }).then(() => console.log("History Added to database"))
-//         .catch(error => console.log("error",error))
-// }
 
 let purchase = async (e) =>{
     e.preventDefault();
