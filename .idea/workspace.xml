@@ -12,9 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5f6b20-15fc-4f87-bebd-ecc1b8728584" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/html/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/html/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +80,9 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;ed32d107e69aa6b4989d8d52017bbcdd&quot;
@@ -101,13 +100,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.58 (Ubuntu)">
-    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.revature.Driver" />
-      <module name="Project2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Project2 [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -139,6 +131,11 @@
         <artifact name="Project2:war">
           <settings>
             <option name="CONTEXT_PATH" value="/Project2" />
+          </settings>
+        </artifact>
+        <artifact name="Project2:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Project2_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -222,13 +219,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Driver" />
       <item itemvalue="Maven.Project2 [clean]" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.58 (Ubuntu)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Driver" />
         <item itemvalue="Maven.Project2 [clean]" />
       </list>
     </recent_temporary>
@@ -259,7 +254,8 @@
       <workItem from="1662126985528" duration="1978000" />
       <workItem from="1662557585238" duration="853000" />
       <workItem from="1662559192750" duration="15245000" />
-      <workItem from="1662583555157" duration="5414000" />
+      <workItem from="1662583555157" duration="8154000" />
+      <workItem from="1662644330368" duration="2209000" />
     </task>
     <servers />
   </component>

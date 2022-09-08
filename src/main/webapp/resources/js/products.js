@@ -125,7 +125,8 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
-async function addToHistory(){
+let addToHistory = async (e) =>{
+    e.preventDefault();
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     console.log(userId);
@@ -172,7 +173,7 @@ let purchase = async (e) =>{
     alert(`Thank you for your purchase of items`)
     updateCartTotal()
     if(userId !=null)
-        await addToHistory().then(() => itemsPurchased = {});
+        await addToHistory(e).then(() => itemsPurchased = {});
     else
         itemsPurchased = {}
 

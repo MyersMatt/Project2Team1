@@ -26,7 +26,7 @@ public class User {
     @Column(name = "contact_name", nullable = false)
     private String contactName;
 
-    @Column(name = "is_manager", nullable = false )
+    @Column(name = "is_admin", nullable = false )
     private Boolean isAdmin = false;
     @Column(name = "shipping_address")
     private String shippingAddress;
