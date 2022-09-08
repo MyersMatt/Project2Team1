@@ -13,7 +13,7 @@ import java.util.List;
 @Repository("OrderListDaoBean")
 public class OrderListDao implements Dao<OrderList> {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
     @Autowired
     public OrderListDao(SessionFactory sessionFactory){
         this.sessionFactory =sessionFactory;

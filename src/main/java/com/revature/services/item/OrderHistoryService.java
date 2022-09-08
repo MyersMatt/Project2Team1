@@ -21,7 +21,7 @@ public class OrderHistoryService {
     private static final Logger logger = Logger.getLogger(OrderHistoryService.class.getName());
     private final UserDao userDao;
     private final ItemDao itemDao;
-    private OrderListDao orderListDao;
+    private final OrderListDao orderListDao;
 
     @Autowired
     public OrderHistoryService(UserDao userDao, ItemDao itemDao, OrderListDao orderListDao){

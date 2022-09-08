@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/OrderHistory")
 @CrossOrigin("*")
 public class OrderHistoryController {
-    private OrderHistoryService orderHistoryService;
+    private final OrderHistoryService orderHistoryService;
 
     @Autowired
     public OrderHistoryController(OrderHistoryService orderHistoryService){
