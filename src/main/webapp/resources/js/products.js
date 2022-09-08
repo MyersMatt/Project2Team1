@@ -129,20 +129,20 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
-let addToHistory = async () =>{
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    console.log(userId);
-    itemsPurchased["userId"] = userId;
-    let raw = JSON.stringify(itemsPurchased);
-    return fetch("localhost:8080/Project2/api/OrderHistory/AddHistory", {
-        method:"POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    }).then(() => console.log("History Added to database"))
-        .catch(error => console.log("error",error))
-}
+// let addToHistory = async (e) =>{
+//     let myHeaders = new Headers();
+//     myHeaders.append("Content-Type", "application/json");
+//     console.log(userId);
+//     itemsPurchased["userId"] = userId;
+//     let raw = JSON.stringify(itemsPurchased);
+//     return fetch("localhost:8080/Project2/api/OrderHistory/AddHistory", {
+//         method:"POST",
+//         headers: myHeaders,
+//         body: raw,
+//         redirect: 'follow'
+//     }).then(() => console.log("History Added to database"))
+//         .catch(error => console.log("error",error))
+// }
 
 let purchase = async (e) =>{
     e.preventDefault();
@@ -152,6 +152,9 @@ let purchase = async (e) =>{
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
+    if(userId!=null){
+        itemsPurchased["userId"] = userId;
+    }
     let raw = JSON.stringify(itemsPurchased);
     console.log(raw)
     let requestOptions = {
@@ -172,11 +175,6 @@ let purchase = async (e) =>{
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
-
-    if((userId !=null) && (itemsPurchased.length!==0))
-        await addToHistory().then(() => itemsPurchased = {});
-    else
-        itemsPurchased = {}
 
     alert(`Thank you for your purchase of items`)
     updateCartTotal()

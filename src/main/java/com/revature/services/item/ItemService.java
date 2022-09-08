@@ -59,12 +59,13 @@ public class ItemService {
         return itemDao.read();
     }
 
-    public void updatePurchasedItems(LinkedHashMap<Integer, Integer> body) {
-        for(Map.Entry<Integer,Integer> entry : body.entrySet()){
-            Optional<StoreItem> item = getItem(entry.getKey());
+    public void updatePurchasedItems(LinkedHashMap<String, String> body) {
+        for(Map.Entry<String,String> entry : body.entrySet()){
+            if(entry.getKey().equals("userId")) continue;
+            Optional<StoreItem> item = getItem(Integer.parseInt(entry.getKey()));
             if(item.isPresent()){
                 logger.log(Level.INFO,"found item: "+item.get());
-                item.get().setItemQuantity(item.get().getItemQuantity() - entry.getValue());
+                item.get().setItemQuantity(item.get().getItemQuantity() - Integer.parseInt(entry.getValue()));
                 itemDao.update(item.get());
             }
         }
