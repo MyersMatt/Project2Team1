@@ -35,6 +35,8 @@ async function doTheFetch (form_info, _api) {
     if (response.status == 200) {
         localStorage.setItem('user_id', data.id)
         localStorage.setItem('is_admin', data.admin)
+        localStorage.setItem("payment_info", data.paymentInfo)
+        localStorage.setItem("shipping_address", data.shippingAddress)
         window.location.href="products.html";
     }
 }
@@ -84,6 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let form_info = new FormData(ev.target);
         doTheFetch(form_info, 'login');
         loginForm.reset();
+        if(localStorage.getItem("user_id") == null)
+           setFormMessage(loginForm,"error","Incorrect Username or Password");
         
     });
 
