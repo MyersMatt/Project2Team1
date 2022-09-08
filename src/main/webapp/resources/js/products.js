@@ -5,6 +5,9 @@ let itemsPurchased = {}
 let userId
 
 window.onload = async function init(){
+
+    userId = localStorage.getItem('user_id')
+
     let req = new Request(url+"/getAllItems", {method: 'GET'});
     let container = document.getElementById("prod-list");
     await fetch(req).then((response) =>{
@@ -125,8 +128,8 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
-let addToHistory = async (e) =>{
-    e.preventDefault();
+
+let addToHistory = async () =>{
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     console.log(userId);
@@ -140,9 +143,9 @@ let addToHistory = async (e) =>{
     }).then(() => console.log("History Added to database"))
         .catch(error => console.log("error",error))
 }
+
 let purchase = async (e) =>{
     e.preventDefault();
-    userId = localStorage.getItem('user_id')
     let boughtItem = document.getElementsByClassName("bought-item")
     let boughtItemQty = document.getElementsByClassName("cart-quantity-input")
     for (let i = 0; i<boughtItem.length; ++i) itemsPurchased[boughtItem[i].getAttribute('id')] = boughtItemQty[i].value
@@ -170,12 +173,11 @@ let purchase = async (e) =>{
         cartItems.removeChild(cartItems.firstChild)
     }
 
-    alert(`Thank you for your purchase of items`)
-    updateCartTotal()
-    if(userId !=null)
-        await addToHistory(e).then(() => itemsPurchased = {});
+    if((userId !=null) && (itemsPurchased.length!==0))
+        await addToHistory().then(() => itemsPurchased = {});
     else
         itemsPurchased = {}
 
-    location.reload();
+    alert(`Thank you for your purchase of items`)
+    updateCartTotal()
 }

@@ -35,6 +35,7 @@ async function doTheFetch (form_info, _api) {
     if (response.status == 200) {
         localStorage.setItem('user_id', data.id)
         localStorage.setItem('is_admin', data.admin)
+        window.location.href="products.html";
     }
 }
 
@@ -49,7 +50,6 @@ function convert2JSON(payload) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
-    // const eRGEX = [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4};
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }else {
             console.log("They equal; DO THE FETCH!");
             doTheFetch(form_info, 'register');
-            window.location.href="products.html";
             createAccountForm.reset();
         }
     });
@@ -84,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ev.preventDefault();
         let form_info = new FormData(ev.target);
         doTheFetch(form_info, 'login');
-        window.location.href="products.html";
         loginForm.reset();
         
     });
