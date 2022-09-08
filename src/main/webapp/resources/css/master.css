@@ -122,15 +122,24 @@ section.featured {
 table {
     width: 500px;
     color: var(--color-primary);
+    line-height: 40px;
+
 }
 
 th {
     text-align: left; 
+    font-size: 1.2rem;
 }
+
 
 
 #amt {
     text-align: right
+}
+
+.order-id:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .container,
