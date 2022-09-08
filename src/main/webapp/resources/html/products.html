@@ -9,20 +9,16 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet"> 
-        <!-- <script src="../js/disp-prod.js" defer></script> -->
-        <script src="../js/products.js" defer></script>   
+        <script src="../js/products.js" defer></script>
     </head>
     <body>
         <header>
             <img src="../images/sequoia-scientific-logo2.jpg" alt="">
-            <!-- <h1> Welcome to Sequoia Scientific </h1> -->
             <nav class="nav">
-                <th><a href = "index.html">Home</a></th>
-                <th><a href = "products.html">Products</a></th>
-                <th><a href = "account.html">Account</a></th>
-                <th><a href = "login.html">Login</a></th>
-                <th><a href = "checkout.html">Checkout</a></th>
-                        </nav>
+                <th><a href = "account.html" id="account-inactive">Account</a></th>
+                <th><a href = "products.html" id="sign-out-inactive", onclick="signout()" >Sign Out</a></th>
+                <th><a href = "login.html" id="login-active">Login</a></th>
+            </nav>
         <section class="title-row">
             <h3> Products </h3>
         </section>
@@ -47,79 +43,31 @@
             <strong class="cart-total-title">Total</strong>
             <span class="cart-total-price">$0.00</span>
         </div>
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        <div class="payment-form">
+            <h2><u>Payment Information</u></h2>
+            <div id="error-message"></div><br>
+            <div class="payment-column"><label>Name on Card:</label><br>
+            <input type="text" id="ccname" name="cardname" placeholder="John Doe">
+            </div>
+            <div class="payment-column">
+            <label >Credit Card Number:</label><br>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br>
+            </div>
+            <div class="payment-column">
+            <label>Exp Month:</label> <br>
+            <input type="text" id="expmonth" name="expmonth" placeholder="October">
+            </div>
+            <div class="payment-column">
+            <label>Exp Year:</label><br>
+            <input type="text" id="expyear" name="expyear" placeholder="2022">
+            </div>
+            <div class="payment-column">
+                <label>Shipping Address:</label><br>
+                <input type="text" id="shipaddr" name="shipaddr" placeholder="123 Example Street">
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button" onclick="purchase(event)">PURCHASE</button>
+
+        </div>
     </section>
 </body>
 </html>
-
-
-
-
-<!-- template for prod-list -->
-        <!-- <article class="prod-row">
-            <img class="prod-image" src="../images/Album 1.jpeg" alt="image">
-            <div class="prod-text">
-                <h2 class="prod-title">New XGT-9000 Micro XRF Analytical Microscope</h2>
-                <p class="prod-desc">XGT-9000 Combines New Imaging Technology with High Sensitivity for High-Speed Analysis of Foreign Materials in one Instrument.  HORIBA Scientific, a global leader in spectroscopy instrumentation and solutions, announces the release of its new XGT-9000 X-ray analytical microscope (μXRF), which simultaneously performs elemental analysis and optical observation of samples without destroying or contacting them. Incorporating HORIBA’s proprietary X-ray technology, with the highest resolution in the world, the XGT-9000 not only screens foreign objects that often cause problems in the production process of lithium-ion batteries, food, cosmetics, and pharmaceuticals but also analyzes elements in semiconductor integrated circuits and other micro-objects. It also measures film thickness and adherence amounts with a high degree of accuracy.</p>
-            </div>
-            <div class="prod-numb">
-                <p class="prod-price">$9735.00</p>
-                <p class="prod-quantity"><strong>5</strong><br><em>in stock</em></p>
-                <button class="buy-btn">Purchase</button>
-            </div>
-        </article>
-        <article class="prod-row">
-            <img class="prod-image" src="../images/Album 2.jpeg" alt="image">
-            <div class="prod-text">
-                <h2 class="prod-title">Midmark Ritter M11 Ultraclave Steam Sterilizer</h2>
-                <p class="prod-desc"> Midmark Ritter M11 Ultraclave Steam Sterilizer is a popular choice for a number of applications. They are reliable and the Steam–Flush Pressure Pulse Air Removal System ensures proper steam penetration. Also, they are very user-friendly so simply load it, set it and forget it.  In addition, they also offer a lot of convenience with four pre-programmed and two programmable cycles.</p>
-            </div>
-            <div class="prod-numb">
-                <p class="prod-price">$3650.00</p>
-                <button class="buy-btn">Purchase</button>
-            </div>
-        </article>
-        <article class="prod-row">
-            <img class="prod-image" src="../images/Album 3.jpeg" alt="image">
-            <div class="prod-text">
-                <h2 class="prod-title">Tuttnauer 2540EA Autoclave Sterilizer w WARRANTY</h2>
-                <p class="prod-desc">This is a nice used Tuttnauer 2540Ea Autoclave. Unit is in Good Working and Physical Condition. We Tested the Preset Programs it it Proceeds Through Each to Completion Without and Issues or Errors. Actual Unit Pictured, Comes Complete and Ready for Use with Two Shelves, User's Manual and Power Cord. Unit will Be Guaranteed for 30 Days Allowing You Enough Time to Fully Test and Inspect. Please Add $125 Flat Rate Ground Shipping Within the US.</p>
-            </div>
-            <div class="prod-numb">
-                <p class="prod-price">$2750.00</p>
-                <button class="buy-btn">Purchase</button>
-            </div>
-        </article>
-        <article class="prod-row">
-            <img class="prod-image" src="../images/Album 4.jpeg" alt="image">
-            <div class="prod-text">
-                <h2 class="prod-title">Jobin Yvon Emission Ultima Atomic Emission Spectrometer</h2>
-                <p class="prod-desc">What Is Included:  Atomic Emission Spectrometer, Power Cord, Jobin Yvon Horiba AS450 Autosampler.   Specifications:  Manufacturer: Jobin Yvon, Model: Ultima, Type: Inductively Coupled Plasma- Atomic Emission Spectrometer, CI: 7380, Nos:RXX639, Volts: 230</p>
-            </div>
-            <div class="prod-numb">
-                <p class="prod-price">$5500.00</p>
-                <button class="buy-btn">Purchase</button>
-            </div>
-        </article>
-        <article class="prod-row">
-            <img class="prod-image" src="../images/Album 5.jpeg" alt="image">
-            <div class="prod-text">
-                <h2 class="prod-title">Refurbished Agilent HP 1100 HPLC Quaternary DAD system</h2>
-                <p class="prod-desc">This Agilent 1100 HPLC DAD system has been reconditioned and tested. ONE YEAR WARRANTY is included!   This item comes with the following:  Agilent/ HP G1315A DAD Detector, G1313A Autosampler,G1311A Quaternary Pump,G1316A Column Department, G1322A Degasser, Solvent Tray, PC loaded with data system, All cables for full setup, Power Cords.  Please contact us for more information.</p>
-            </div>
-            <div class="prod-numb">
-                <p class="prod-price">$14700.00</p>
-                <button class="buy-btn">Purchase</button>
-            </div>
-        </article> -->
-        <!-- template for cart-row -->
-        <!-- <div class="cart-row">
-        <div class="cart-row">
-            <div class="cart-item cart-column">
-                <img class="cart-item-image" src="http://dummyimage.com/x1.png/cc0000/ffffff" width="100" height="100">
-                <span class="cart-item-title">Carex pyrenaica Wahlenb. ssp. pyrenaica</span>
-            </div>
-            <span class="cart-price cart-column">2143.24</span>
-            <div class="cart-quantity cart-column">
-                <input class="cart-quantity-input" type="number" value="1">
-                <button class="btn btn-danger" type="button">REMOVE</button>

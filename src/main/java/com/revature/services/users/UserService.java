@@ -1,7 +1,6 @@
 package com.revature.services.users;
 
 import com.revature.dao.UserDao;
-import com.revature.exceptions.UserAlreadyExistsException;
 import com.revature.exceptions.UserDoesNotExistException;
 import com.revature.models.items.StoreItem;
 import com.revature.models.users.User;
@@ -14,7 +13,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service("UserServiceBean")
-public class UserService extends GuestService {
+public class UserService {
 
     private final UserDao userDao;
 
@@ -29,10 +28,6 @@ public class UserService extends GuestService {
         for (User i : users)
             if (i.getUsername().equals(u.getUsername())) return Optional.of(i);
         throw new UserDoesNotExistException();
-    }
-
-    public void addItemHistory(LinkedHashMap<Integer, Integer> items) {
-
     }
 
     public Optional<User> getById(Integer i) throws UserDoesNotExistException {

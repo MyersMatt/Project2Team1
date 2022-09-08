@@ -1,14 +1,10 @@
 /* @import "master.css"
  */
-.prod-list {
-    width: 900px;
-    /* border: 2px solid red; */
-    /* scroll-snap-type: ; */
-}
 
 .prod-list {
     height: 500px;
     overflow-y: scroll;
+    width: auto;
 }
 
 article {
@@ -16,8 +12,8 @@ article {
     display: grid;
     /* border: 1px solid black; */
     gap: 10px;
-    grid-template-columns: 150px 650px 100px;
-    /* grid-template-columns: .25fr .65fr .1fr; */
+    /*grid-template-columns: 150px 650px 100px;*/
+     grid-template-columns: .25fr .65fr .1fr;
 }
 
 article img {
@@ -96,6 +92,10 @@ h2 {
     width: 45%;
 }
 
+.payment-column{
+    float: left;
+    width: 50%;
+}
 .cart-price {
     width: 20%;
     font-size: 1.2em;

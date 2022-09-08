@@ -52,6 +52,50 @@ nav a {
     text-decoration: none;
 }
 
+
+#admin-options{
+    display: block;
+    visibility: hidden;
+}
+
+#sign-out-inactive{
+    display: block;
+    visibility: hidden;
+
+}
+#sign-out-active{
+    display: block;
+    visibility: visible;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+}
+
+#account-active{
+    display: block;
+    visibility: visible;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+}
+
+#account-inactive{
+    display: block;
+    visibility: hidden;
+}
+#login-active{
+    display: block;
+    visibility: visible;
+}
+#login-inactive{
+    display: block;
+    visibility: hidden;
+}
+
 nav a:hover {
     color: black
     /* text-shadow: 1px 1px 2px black; */
@@ -102,6 +146,39 @@ section.featured {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius);
     background: #ffffff;
+}
+
+.order-history {
+        width: 500px;
+        max-width: 500px;
+        margin: 1rem;
+        padding: 2rem;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        border-radius: var(--border-radius);
+        background: #ffffff;
+}
+
+table {
+    width: 500px;
+    color: var(--color-primary);
+    line-height: 40px;
+
+}
+
+th {
+    text-align: left; 
+    font-size: 1.2rem;
+}
+
+
+
+#amt {
+    text-align: right
+}
+
+.order-id:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .container,

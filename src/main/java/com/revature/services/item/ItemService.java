@@ -5,12 +5,16 @@ import com.revature.models.items.StoreItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service("ItemServiceBean")
 public class ItemService {
-
+    public static final Logger logger = Logger.getLogger(ItemService.class.getName());
     private final ItemDao itemDao;
 
     @Autowired
@@ -53,5 +57,17 @@ public class ItemService {
 
     public List<StoreItem> getAll() {
         return itemDao.read();
+    }
+
+    public void updatePurchasedItems(LinkedHashMap<String, String> body) {
+        for(Map.Entry<String,String> entry : body.entrySet()){
+            if(entry.getKey().equals("userId")) continue;
+            Optional<StoreItem> item = getItem(Integer.parseInt(entry.getKey()));
+            if(item.isPresent()){
+                logger.log(Level.INFO,"found item: "+item.get());
+                item.get().setItemQuantity(item.get().getItemQuantity() - Integer.parseInt(entry.getValue()));
+                itemDao.update(item.get());
+            }
+        }
     }
 }

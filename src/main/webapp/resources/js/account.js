@@ -35,7 +35,7 @@ window.onload = async function getUserInfo() {
     }
 
     if(userInformation.paymentInfo == null){
-        paymentInfo.value = "1111-1111-1111"
+        paymentInfo.value = "1111-2222-3333-4444"
     }else{
         paymentInfo.value = userInformation.paymentInfo
     }
@@ -82,6 +82,8 @@ async function getData(e){
         } catch(e){
             //errorMessage.innerText = "invalid information was received, please try again";
             console.log("A user has failed to update to the system");
+        } finally {
+            location.reload();
         }
     }
     else {
