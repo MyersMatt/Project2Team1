@@ -141,6 +141,28 @@ function updateCartTotal() {
 
 let purchase = async (e) =>{
     e.preventDefault();
+    let ccname = document.getElementById("ccname").value;
+    let ccnum = document.getElementById("ccnum").value;
+    let expmonth = document.getElementById("expmonth").value;
+    let expyear = document.getElementById("expyear").value;
+    let shipaddr = document.getElementById("shipaddr").value;
+    let message = document.getElementById("error-message")
+    console.log(ccname)
+    console.log(ccnum)
+    console.log(expmonth)
+    console.log(expyear)
+    console.log(shipaddr)
+    if(ccname.length === 0
+        || ccnum.length === 0
+        || expmonth.length === 0
+        || expyear.length === 0
+        || shipaddr.length === 0
+    ){
+
+        message.innerText = "Payment Info Error, Please fill out all appropriate fields"
+        message.style.color = '#FF0000'
+    }else{
+        message.innerText = ""
     let boughtItem = document.getElementsByClassName("bought-item")
     let boughtItemQty = document.getElementsByClassName("cart-quantity-input")
     for (let i = 0; i<boughtItem.length; ++i) itemsPurchased[boughtItem[i].getAttribute('id')] = boughtItemQty[i].value
@@ -171,6 +193,14 @@ let purchase = async (e) =>{
         cartItems.removeChild(cartItems.firstChild)
     }
 
+    if(userId === null){
+        document.getElementById("ccname").value = '';
+        document.getElementById("ccnum").value = '';
+        document.getElementById("expmonth").value = '';
+        document.getElementById("expyear").value = '';
+        document.getElementById("shipaddr").value = '';
+    }
     alert(`Thank you for your purchase of items`)
     updateCartTotal()
+    }
 }
