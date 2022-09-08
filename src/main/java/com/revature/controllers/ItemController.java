@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import com.revature.models.items.StoreItem;
 import com.revature.services.item.ItemService;
+import com.revature.services.item.OrderHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -9,16 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Controller
 @RequestMapping("/items")
 @CrossOrigin("*")
 public class ItemController {
     private final ItemService itemService;
+    private final OrderHistoryService orderHistoryService;
+    private static final Logger logger = Logger.getLogger(ItemController.class.getName());
 
     @Autowired
-    public ItemController(ItemService itemService) {
+    public ItemController(ItemService itemService,OrderHistoryService orderHistoryService) {
         this.itemService = itemService;
+        this.orderHistoryService = orderHistoryService;
     }
 
     @PostMapping("/add")
@@ -50,6 +56,12 @@ public class ItemController {
         return itemService.getItem(itemId).orElse(null);
     }
 
+    @PatchMapping("/updateBoughtItems")
+    public @ResponseBody void updateBoughtItems(@RequestBody LinkedHashMap<String, String> body){
+        logger.log(Level.INFO, "Got here with body: " + body);
+        itemService.updatePurchasedItems(body);
+        if(body.containsKey("userId")) orderHistoryService.addHistory(body);
+    }
     @GetMapping("/getAllItems")
     public @ResponseBody List<StoreItem> getAllItems() {
         return itemService.getAll();

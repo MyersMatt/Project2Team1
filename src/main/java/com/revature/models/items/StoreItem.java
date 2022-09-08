@@ -16,9 +16,9 @@ public class StoreItem {
     private double itemPrice;
     @Column(name = "item_quantity", nullable = false)
     private int itemQuantity;
-    @Column(name = "description",nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
-    @Column(name = "image_url",nullable = false)
+    @Column(name = "image_url", nullable = false)
     private String imageUrl;
 
     public StoreItem() {
@@ -71,5 +71,17 @@ public class StoreItem {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "StoreItem{" +
+                "itemId=" + itemId +
+                ", itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                ", itemQuantity=" + itemQuantity +
+                ", description='" + description + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }

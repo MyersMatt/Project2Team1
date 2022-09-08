@@ -28,10 +28,11 @@ public class UserDao implements Dao<User> {
     public void create(User user) throws DataIntegrityViolationException {
         sessionFactory.getCurrentSession().save(user);
     }
-	@Override
-	public void update(User user){
-		sessionFactory.getCurrentSession().update(user);
-	}
+
+    @Override
+    public void update(User user) {
+        sessionFactory.getCurrentSession().update(user);
+    }
 
     @Override
     public List<User> read() {

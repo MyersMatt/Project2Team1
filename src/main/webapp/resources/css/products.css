@@ -1,15 +1,24 @@
 /* @import "master.css"
  */
 
+.prod-list {
+    height: 500px;
+    overflow-y: scroll;
+    width: auto;
+}
+
 article {
     background: white;
     display: grid;
-    grid-template-columns: .25fr .65fr .1fr;
+    /* border: 1px solid black; */
+    gap: 10px;
+    /*grid-template-columns: 150px 650px 100px;*/
+     grid-template-columns: .25fr .65fr .1fr;
 }
 
 article img {
-    height: 250px;
-    width: 250px;
+    height: 100px;
+    width: 100px;
 }
 
 article:nth-child(even) {
@@ -19,6 +28,7 @@ article:nth-child(even) {
 .prod-text {
     padding-left: 15px;
     text-align: left;
+    /* border: 1px solid gray; */
 }
 
 h2 {
@@ -30,24 +40,23 @@ h2 {
 }
 
 .prod-numb {
+    /* border: 1px solid gray; */
     padding-left: 15px;
     align-items: center;
 }
 
 .section-header {
-    font-family: "Metal Mania";
-    font-weight: normal;
     color: #333;
     text-align: center;
-    font-size: 2.5em;
-}
+    font-size: 2rem;
+    }
 
 .content-section {
     width: 900px;
     margin: 1em;
 }
 
-.container {
+.cart-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5em;
@@ -83,6 +92,10 @@ h2 {
     width: 45%;
 }
 
+.payment-column{
+    float: left;
+    width: 50%;
+}
 .cart-price {
     width: 20%;
     font-size: 1.2em;
@@ -100,8 +113,8 @@ h2 {
 }
 
 .cart-item-image {
-    width: 75px;
-    height: auto;
+    width: auto;
+    height: 40px;
     border-radius: 10px;
 }
 
@@ -115,6 +128,11 @@ h2 {
 
 .btn-danger:hover {
     background-color: #CC4C4C;
+}
+
+.cart-container h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .cart-quantity-input {
@@ -158,6 +176,6 @@ h2 {
 
 .btn-purchase {
     display: block;
-    margin: 40px auto 80px auto;
-    font-size: 1.75em;
+    margin: 20px auto 40px auto;
+    font-size: 1.25em;
 }
